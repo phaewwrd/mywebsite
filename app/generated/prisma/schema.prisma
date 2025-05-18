@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Blog {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+}
+
+model Education {
+  id          Int     @id(map: "education_pkey") @default(autoincrement())
+  org_name    String?
+  subject     String?
+  years       String?
+  description String?
+}
+
+model WorkExp {
+  id           Int     @id @default(autoincrement())
+  job_title    String?
+  years        String?
+  description_ String? @map("description ")
+  company      String?
+}
