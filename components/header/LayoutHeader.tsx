@@ -38,7 +38,7 @@ export default function LayoutHeader() {
         /
         <li>
           <Link
-            href="/aboutme"
+            href="#aboutme"
             className={`group relative px-2 py-1 font-bold text-cyan-600 ${
               pathname === "/aboutme"
                 ? "after:w-full text-cyan-900 px-3 py-2 rounded-lg"
@@ -52,7 +52,7 @@ export default function LayoutHeader() {
         /
         <li>
           <Link
-            href="/project"
+            href="#projects"
             className={`group relative px-2 py-1 font-bold text-cyan-600 ${
               pathname === "/project"
                 ? "after:w-full text-cyan-900 px-3 py-2 rounded-lg"
@@ -66,7 +66,7 @@ export default function LayoutHeader() {
         /
         <li>
           <Link
-            href="/blog"
+            href="#blog"
             className={`group relative px-2 py-1 font-bold text-cyan-600 ${
               pathname === "/blog"
                 ? "after:w-full text-cyan-900 px-3 py-2 rounded-lg"

@@ -10,11 +10,32 @@ export async function fecthBlog() {
 }
 
 export async function fetchEducation() {
-  const education = prisma.education.findMany();
-  return education;
+  try {
+    const education = await prisma.education.findMany({
+      orderBy: { years: 'desc' },
+    });
+
+    return education;
+  } catch (error) {
+    console.error('Failed to fetch education:', error);
+    return [];
+  }
 }
 
 export async function fetchExperience() {
-  const workexp = await prisma.workExp.findMany();
+  const workexp = await prisma.workExp.findMany({
+    orderBy:{
+      id: "asc"
+    }
+  });
   return workexp;
+}
+
+export async function fecthTechStack() {
+  const techstack = await prisma.tech_stack.findMany({
+    orderBy: {
+      id: "asc",
+    },
+  });
+  return techstack;
 }

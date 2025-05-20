@@ -28,6 +28,16 @@ export type Education = $Result.DefaultSelection<Prisma.$EducationPayload>
  * 
  */
 export type WorkExp = $Result.DefaultSelection<Prisma.$WorkExpPayload>
+/**
+ * Model Tech_stack
+ * 
+ */
+export type Tech_stack = $Result.DefaultSelection<Prisma.$Tech_stackPayload>
+/**
+ * Model Projects
+ * 
+ */
+export type Projects = $Result.DefaultSelection<Prisma.$ProjectsPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -183,6 +193,26 @@ export class PrismaClient<
     * ```
     */
   get workExp(): Prisma.WorkExpDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.tech_stack`: Exposes CRUD operations for the **Tech_stack** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tech_stacks
+    * const tech_stacks = await prisma.tech_stack.findMany()
+    * ```
+    */
+  get tech_stack(): Prisma.Tech_stackDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.projects`: Exposes CRUD operations for the **Projects** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Projects
+    * const projects = await prisma.projects.findMany()
+    * ```
+    */
+  get projects(): Prisma.ProjectsDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -625,7 +655,9 @@ export namespace Prisma {
   export const ModelName: {
     Blog: 'Blog',
     Education: 'Education',
-    WorkExp: 'WorkExp'
+    WorkExp: 'WorkExp',
+    Tech_stack: 'Tech_stack',
+    Projects: 'Projects'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -644,7 +676,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "blog" | "education" | "workExp"
+      modelProps: "blog" | "education" | "workExp" | "tech_stack" | "projects"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -870,6 +902,154 @@ export namespace Prisma {
           }
         }
       }
+      Tech_stack: {
+        payload: Prisma.$Tech_stackPayload<ExtArgs>
+        fields: Prisma.Tech_stackFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.Tech_stackFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Tech_stackPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.Tech_stackFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Tech_stackPayload>
+          }
+          findFirst: {
+            args: Prisma.Tech_stackFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Tech_stackPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.Tech_stackFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Tech_stackPayload>
+          }
+          findMany: {
+            args: Prisma.Tech_stackFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Tech_stackPayload>[]
+          }
+          create: {
+            args: Prisma.Tech_stackCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Tech_stackPayload>
+          }
+          createMany: {
+            args: Prisma.Tech_stackCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.Tech_stackCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Tech_stackPayload>[]
+          }
+          delete: {
+            args: Prisma.Tech_stackDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Tech_stackPayload>
+          }
+          update: {
+            args: Prisma.Tech_stackUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Tech_stackPayload>
+          }
+          deleteMany: {
+            args: Prisma.Tech_stackDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.Tech_stackUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.Tech_stackUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Tech_stackPayload>[]
+          }
+          upsert: {
+            args: Prisma.Tech_stackUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Tech_stackPayload>
+          }
+          aggregate: {
+            args: Prisma.Tech_stackAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTech_stack>
+          }
+          groupBy: {
+            args: Prisma.Tech_stackGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tech_stackGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.Tech_stackCountArgs<ExtArgs>
+            result: $Utils.Optional<Tech_stackCountAggregateOutputType> | number
+          }
+        }
+      }
+      Projects: {
+        payload: Prisma.$ProjectsPayload<ExtArgs>
+        fields: Prisma.ProjectsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ProjectsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProjectsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ProjectsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProjectsPayload>
+          }
+          findFirst: {
+            args: Prisma.ProjectsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProjectsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ProjectsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProjectsPayload>
+          }
+          findMany: {
+            args: Prisma.ProjectsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProjectsPayload>[]
+          }
+          create: {
+            args: Prisma.ProjectsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProjectsPayload>
+          }
+          createMany: {
+            args: Prisma.ProjectsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ProjectsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProjectsPayload>[]
+          }
+          delete: {
+            args: Prisma.ProjectsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProjectsPayload>
+          }
+          update: {
+            args: Prisma.ProjectsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProjectsPayload>
+          }
+          deleteMany: {
+            args: Prisma.ProjectsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ProjectsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ProjectsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProjectsPayload>[]
+          }
+          upsert: {
+            args: Prisma.ProjectsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProjectsPayload>
+          }
+          aggregate: {
+            args: Prisma.ProjectsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateProjects>
+          }
+          groupBy: {
+            args: Prisma.ProjectsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ProjectsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ProjectsCountArgs<ExtArgs>
+            result: $Utils.Optional<ProjectsCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -957,6 +1137,8 @@ export namespace Prisma {
     blog?: BlogOmit
     education?: EducationOmit
     workExp?: WorkExpOmit
+    tech_stack?: Tech_stackOmit
+    projects?: ProjectsOmit
   }
 
   /* Types for Logging */
@@ -4126,6 +4308,2077 @@ export namespace Prisma {
 
 
   /**
+   * Model Tech_stack
+   */
+
+  export type AggregateTech_stack = {
+    _count: Tech_stackCountAggregateOutputType | null
+    _avg: Tech_stackAvgAggregateOutputType | null
+    _sum: Tech_stackSumAggregateOutputType | null
+    _min: Tech_stackMinAggregateOutputType | null
+    _max: Tech_stackMaxAggregateOutputType | null
+  }
+
+  export type Tech_stackAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type Tech_stackSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type Tech_stackMinAggregateOutputType = {
+    id: number | null
+    name: string | null
+    image_Url: string | null
+  }
+
+  export type Tech_stackMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+    image_Url: string | null
+  }
+
+  export type Tech_stackCountAggregateOutputType = {
+    id: number
+    name: number
+    image_Url: number
+    _all: number
+  }
+
+
+  export type Tech_stackAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type Tech_stackSumAggregateInputType = {
+    id?: true
+  }
+
+  export type Tech_stackMinAggregateInputType = {
+    id?: true
+    name?: true
+    image_Url?: true
+  }
+
+  export type Tech_stackMaxAggregateInputType = {
+    id?: true
+    name?: true
+    image_Url?: true
+  }
+
+  export type Tech_stackCountAggregateInputType = {
+    id?: true
+    name?: true
+    image_Url?: true
+    _all?: true
+  }
+
+  export type Tech_stackAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Tech_stack to aggregate.
+     */
+    where?: Tech_stackWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Tech_stacks to fetch.
+     */
+    orderBy?: Tech_stackOrderByWithRelationInput | Tech_stackOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: Tech_stackWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Tech_stacks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Tech_stacks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Tech_stacks
+    **/
+    _count?: true | Tech_stackCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tech_stackAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tech_stackSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tech_stackMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tech_stackMaxAggregateInputType
+  }
+
+  export type GetTech_stackAggregateType<T extends Tech_stackAggregateArgs> = {
+        [P in keyof T & keyof AggregateTech_stack]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTech_stack[P]>
+      : GetScalarType<T[P], AggregateTech_stack[P]>
+  }
+
+
+
+
+  export type Tech_stackGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Tech_stackWhereInput
+    orderBy?: Tech_stackOrderByWithAggregationInput | Tech_stackOrderByWithAggregationInput[]
+    by: Tech_stackScalarFieldEnum[] | Tech_stackScalarFieldEnum
+    having?: Tech_stackScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tech_stackCountAggregateInputType | true
+    _avg?: Tech_stackAvgAggregateInputType
+    _sum?: Tech_stackSumAggregateInputType
+    _min?: Tech_stackMinAggregateInputType
+    _max?: Tech_stackMaxAggregateInputType
+  }
+
+  export type Tech_stackGroupByOutputType = {
+    id: number
+    name: string | null
+    image_Url: string | null
+    _count: Tech_stackCountAggregateOutputType | null
+    _avg: Tech_stackAvgAggregateOutputType | null
+    _sum: Tech_stackSumAggregateOutputType | null
+    _min: Tech_stackMinAggregateOutputType | null
+    _max: Tech_stackMaxAggregateOutputType | null
+  }
+
+  type GetTech_stackGroupByPayload<T extends Tech_stackGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tech_stackGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tech_stackGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tech_stackGroupByOutputType[P]>
+            : GetScalarType<T[P], Tech_stackGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type Tech_stackSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    image_Url?: boolean
+  }, ExtArgs["result"]["tech_stack"]>
+
+  export type Tech_stackSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    image_Url?: boolean
+  }, ExtArgs["result"]["tech_stack"]>
+
+  export type Tech_stackSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    image_Url?: boolean
+  }, ExtArgs["result"]["tech_stack"]>
+
+  export type Tech_stackSelectScalar = {
+    id?: boolean
+    name?: boolean
+    image_Url?: boolean
+  }
+
+  export type Tech_stackOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "image_Url", ExtArgs["result"]["tech_stack"]>
+
+  export type $Tech_stackPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Tech_stack"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      name: string | null
+      image_Url: string | null
+    }, ExtArgs["result"]["tech_stack"]>
+    composites: {}
+  }
+
+  type Tech_stackGetPayload<S extends boolean | null | undefined | Tech_stackDefaultArgs> = $Result.GetResult<Prisma.$Tech_stackPayload, S>
+
+  type Tech_stackCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<Tech_stackFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Tech_stackCountAggregateInputType | true
+    }
+
+  export interface Tech_stackDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Tech_stack'], meta: { name: 'Tech_stack' } }
+    /**
+     * Find zero or one Tech_stack that matches the filter.
+     * @param {Tech_stackFindUniqueArgs} args - Arguments to find a Tech_stack
+     * @example
+     * // Get one Tech_stack
+     * const tech_stack = await prisma.tech_stack.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends Tech_stackFindUniqueArgs>(args: SelectSubset<T, Tech_stackFindUniqueArgs<ExtArgs>>): Prisma__Tech_stackClient<$Result.GetResult<Prisma.$Tech_stackPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Tech_stack that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {Tech_stackFindUniqueOrThrowArgs} args - Arguments to find a Tech_stack
+     * @example
+     * // Get one Tech_stack
+     * const tech_stack = await prisma.tech_stack.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends Tech_stackFindUniqueOrThrowArgs>(args: SelectSubset<T, Tech_stackFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Tech_stackClient<$Result.GetResult<Prisma.$Tech_stackPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tech_stack that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tech_stackFindFirstArgs} args - Arguments to find a Tech_stack
+     * @example
+     * // Get one Tech_stack
+     * const tech_stack = await prisma.tech_stack.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends Tech_stackFindFirstArgs>(args?: SelectSubset<T, Tech_stackFindFirstArgs<ExtArgs>>): Prisma__Tech_stackClient<$Result.GetResult<Prisma.$Tech_stackPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tech_stack that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tech_stackFindFirstOrThrowArgs} args - Arguments to find a Tech_stack
+     * @example
+     * // Get one Tech_stack
+     * const tech_stack = await prisma.tech_stack.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends Tech_stackFindFirstOrThrowArgs>(args?: SelectSubset<T, Tech_stackFindFirstOrThrowArgs<ExtArgs>>): Prisma__Tech_stackClient<$Result.GetResult<Prisma.$Tech_stackPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Tech_stacks that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tech_stackFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tech_stacks
+     * const tech_stacks = await prisma.tech_stack.findMany()
+     * 
+     * // Get first 10 Tech_stacks
+     * const tech_stacks = await prisma.tech_stack.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const tech_stackWithIdOnly = await prisma.tech_stack.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends Tech_stackFindManyArgs>(args?: SelectSubset<T, Tech_stackFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Tech_stackPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Tech_stack.
+     * @param {Tech_stackCreateArgs} args - Arguments to create a Tech_stack.
+     * @example
+     * // Create one Tech_stack
+     * const Tech_stack = await prisma.tech_stack.create({
+     *   data: {
+     *     // ... data to create a Tech_stack
+     *   }
+     * })
+     * 
+     */
+    create<T extends Tech_stackCreateArgs>(args: SelectSubset<T, Tech_stackCreateArgs<ExtArgs>>): Prisma__Tech_stackClient<$Result.GetResult<Prisma.$Tech_stackPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Tech_stacks.
+     * @param {Tech_stackCreateManyArgs} args - Arguments to create many Tech_stacks.
+     * @example
+     * // Create many Tech_stacks
+     * const tech_stack = await prisma.tech_stack.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends Tech_stackCreateManyArgs>(args?: SelectSubset<T, Tech_stackCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Tech_stacks and returns the data saved in the database.
+     * @param {Tech_stackCreateManyAndReturnArgs} args - Arguments to create many Tech_stacks.
+     * @example
+     * // Create many Tech_stacks
+     * const tech_stack = await prisma.tech_stack.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Tech_stacks and only return the `id`
+     * const tech_stackWithIdOnly = await prisma.tech_stack.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends Tech_stackCreateManyAndReturnArgs>(args?: SelectSubset<T, Tech_stackCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Tech_stackPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Tech_stack.
+     * @param {Tech_stackDeleteArgs} args - Arguments to delete one Tech_stack.
+     * @example
+     * // Delete one Tech_stack
+     * const Tech_stack = await prisma.tech_stack.delete({
+     *   where: {
+     *     // ... filter to delete one Tech_stack
+     *   }
+     * })
+     * 
+     */
+    delete<T extends Tech_stackDeleteArgs>(args: SelectSubset<T, Tech_stackDeleteArgs<ExtArgs>>): Prisma__Tech_stackClient<$Result.GetResult<Prisma.$Tech_stackPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Tech_stack.
+     * @param {Tech_stackUpdateArgs} args - Arguments to update one Tech_stack.
+     * @example
+     * // Update one Tech_stack
+     * const tech_stack = await prisma.tech_stack.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends Tech_stackUpdateArgs>(args: SelectSubset<T, Tech_stackUpdateArgs<ExtArgs>>): Prisma__Tech_stackClient<$Result.GetResult<Prisma.$Tech_stackPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Tech_stacks.
+     * @param {Tech_stackDeleteManyArgs} args - Arguments to filter Tech_stacks to delete.
+     * @example
+     * // Delete a few Tech_stacks
+     * const { count } = await prisma.tech_stack.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends Tech_stackDeleteManyArgs>(args?: SelectSubset<T, Tech_stackDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tech_stacks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tech_stackUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tech_stacks
+     * const tech_stack = await prisma.tech_stack.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends Tech_stackUpdateManyArgs>(args: SelectSubset<T, Tech_stackUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tech_stacks and returns the data updated in the database.
+     * @param {Tech_stackUpdateManyAndReturnArgs} args - Arguments to update many Tech_stacks.
+     * @example
+     * // Update many Tech_stacks
+     * const tech_stack = await prisma.tech_stack.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Tech_stacks and only return the `id`
+     * const tech_stackWithIdOnly = await prisma.tech_stack.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends Tech_stackUpdateManyAndReturnArgs>(args: SelectSubset<T, Tech_stackUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Tech_stackPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Tech_stack.
+     * @param {Tech_stackUpsertArgs} args - Arguments to update or create a Tech_stack.
+     * @example
+     * // Update or create a Tech_stack
+     * const tech_stack = await prisma.tech_stack.upsert({
+     *   create: {
+     *     // ... data to create a Tech_stack
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tech_stack we want to update
+     *   }
+     * })
+     */
+    upsert<T extends Tech_stackUpsertArgs>(args: SelectSubset<T, Tech_stackUpsertArgs<ExtArgs>>): Prisma__Tech_stackClient<$Result.GetResult<Prisma.$Tech_stackPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Tech_stacks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tech_stackCountArgs} args - Arguments to filter Tech_stacks to count.
+     * @example
+     * // Count the number of Tech_stacks
+     * const count = await prisma.tech_stack.count({
+     *   where: {
+     *     // ... the filter for the Tech_stacks we want to count
+     *   }
+     * })
+    **/
+    count<T extends Tech_stackCountArgs>(
+      args?: Subset<T, Tech_stackCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tech_stackCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tech_stack.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tech_stackAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tech_stackAggregateArgs>(args: Subset<T, Tech_stackAggregateArgs>): Prisma.PrismaPromise<GetTech_stackAggregateType<T>>
+
+    /**
+     * Group by Tech_stack.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tech_stackGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends Tech_stackGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: Tech_stackGroupByArgs['orderBy'] }
+        : { orderBy?: Tech_stackGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, Tech_stackGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTech_stackGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Tech_stack model
+   */
+  readonly fields: Tech_stackFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Tech_stack.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__Tech_stackClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Tech_stack model
+   */
+  interface Tech_stackFieldRefs {
+    readonly id: FieldRef<"Tech_stack", 'Int'>
+    readonly name: FieldRef<"Tech_stack", 'String'>
+    readonly image_Url: FieldRef<"Tech_stack", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Tech_stack findUnique
+   */
+  export type Tech_stackFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tech_stack
+     */
+    select?: Tech_stackSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Tech_stack
+     */
+    omit?: Tech_stackOmit<ExtArgs> | null
+    /**
+     * Filter, which Tech_stack to fetch.
+     */
+    where: Tech_stackWhereUniqueInput
+  }
+
+  /**
+   * Tech_stack findUniqueOrThrow
+   */
+  export type Tech_stackFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tech_stack
+     */
+    select?: Tech_stackSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Tech_stack
+     */
+    omit?: Tech_stackOmit<ExtArgs> | null
+    /**
+     * Filter, which Tech_stack to fetch.
+     */
+    where: Tech_stackWhereUniqueInput
+  }
+
+  /**
+   * Tech_stack findFirst
+   */
+  export type Tech_stackFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tech_stack
+     */
+    select?: Tech_stackSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Tech_stack
+     */
+    omit?: Tech_stackOmit<ExtArgs> | null
+    /**
+     * Filter, which Tech_stack to fetch.
+     */
+    where?: Tech_stackWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Tech_stacks to fetch.
+     */
+    orderBy?: Tech_stackOrderByWithRelationInput | Tech_stackOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Tech_stacks.
+     */
+    cursor?: Tech_stackWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Tech_stacks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Tech_stacks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Tech_stacks.
+     */
+    distinct?: Tech_stackScalarFieldEnum | Tech_stackScalarFieldEnum[]
+  }
+
+  /**
+   * Tech_stack findFirstOrThrow
+   */
+  export type Tech_stackFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tech_stack
+     */
+    select?: Tech_stackSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Tech_stack
+     */
+    omit?: Tech_stackOmit<ExtArgs> | null
+    /**
+     * Filter, which Tech_stack to fetch.
+     */
+    where?: Tech_stackWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Tech_stacks to fetch.
+     */
+    orderBy?: Tech_stackOrderByWithRelationInput | Tech_stackOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Tech_stacks.
+     */
+    cursor?: Tech_stackWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Tech_stacks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Tech_stacks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Tech_stacks.
+     */
+    distinct?: Tech_stackScalarFieldEnum | Tech_stackScalarFieldEnum[]
+  }
+
+  /**
+   * Tech_stack findMany
+   */
+  export type Tech_stackFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tech_stack
+     */
+    select?: Tech_stackSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Tech_stack
+     */
+    omit?: Tech_stackOmit<ExtArgs> | null
+    /**
+     * Filter, which Tech_stacks to fetch.
+     */
+    where?: Tech_stackWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Tech_stacks to fetch.
+     */
+    orderBy?: Tech_stackOrderByWithRelationInput | Tech_stackOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Tech_stacks.
+     */
+    cursor?: Tech_stackWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Tech_stacks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Tech_stacks.
+     */
+    skip?: number
+    distinct?: Tech_stackScalarFieldEnum | Tech_stackScalarFieldEnum[]
+  }
+
+  /**
+   * Tech_stack create
+   */
+  export type Tech_stackCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tech_stack
+     */
+    select?: Tech_stackSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Tech_stack
+     */
+    omit?: Tech_stackOmit<ExtArgs> | null
+    /**
+     * The data needed to create a Tech_stack.
+     */
+    data?: XOR<Tech_stackCreateInput, Tech_stackUncheckedCreateInput>
+  }
+
+  /**
+   * Tech_stack createMany
+   */
+  export type Tech_stackCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Tech_stacks.
+     */
+    data: Tech_stackCreateManyInput | Tech_stackCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Tech_stack createManyAndReturn
+   */
+  export type Tech_stackCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tech_stack
+     */
+    select?: Tech_stackSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Tech_stack
+     */
+    omit?: Tech_stackOmit<ExtArgs> | null
+    /**
+     * The data used to create many Tech_stacks.
+     */
+    data: Tech_stackCreateManyInput | Tech_stackCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Tech_stack update
+   */
+  export type Tech_stackUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tech_stack
+     */
+    select?: Tech_stackSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Tech_stack
+     */
+    omit?: Tech_stackOmit<ExtArgs> | null
+    /**
+     * The data needed to update a Tech_stack.
+     */
+    data: XOR<Tech_stackUpdateInput, Tech_stackUncheckedUpdateInput>
+    /**
+     * Choose, which Tech_stack to update.
+     */
+    where: Tech_stackWhereUniqueInput
+  }
+
+  /**
+   * Tech_stack updateMany
+   */
+  export type Tech_stackUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Tech_stacks.
+     */
+    data: XOR<Tech_stackUpdateManyMutationInput, Tech_stackUncheckedUpdateManyInput>
+    /**
+     * Filter which Tech_stacks to update
+     */
+    where?: Tech_stackWhereInput
+    /**
+     * Limit how many Tech_stacks to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Tech_stack updateManyAndReturn
+   */
+  export type Tech_stackUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tech_stack
+     */
+    select?: Tech_stackSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Tech_stack
+     */
+    omit?: Tech_stackOmit<ExtArgs> | null
+    /**
+     * The data used to update Tech_stacks.
+     */
+    data: XOR<Tech_stackUpdateManyMutationInput, Tech_stackUncheckedUpdateManyInput>
+    /**
+     * Filter which Tech_stacks to update
+     */
+    where?: Tech_stackWhereInput
+    /**
+     * Limit how many Tech_stacks to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Tech_stack upsert
+   */
+  export type Tech_stackUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tech_stack
+     */
+    select?: Tech_stackSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Tech_stack
+     */
+    omit?: Tech_stackOmit<ExtArgs> | null
+    /**
+     * The filter to search for the Tech_stack to update in case it exists.
+     */
+    where: Tech_stackWhereUniqueInput
+    /**
+     * In case the Tech_stack found by the `where` argument doesn't exist, create a new Tech_stack with this data.
+     */
+    create: XOR<Tech_stackCreateInput, Tech_stackUncheckedCreateInput>
+    /**
+     * In case the Tech_stack was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<Tech_stackUpdateInput, Tech_stackUncheckedUpdateInput>
+  }
+
+  /**
+   * Tech_stack delete
+   */
+  export type Tech_stackDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tech_stack
+     */
+    select?: Tech_stackSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Tech_stack
+     */
+    omit?: Tech_stackOmit<ExtArgs> | null
+    /**
+     * Filter which Tech_stack to delete.
+     */
+    where: Tech_stackWhereUniqueInput
+  }
+
+  /**
+   * Tech_stack deleteMany
+   */
+  export type Tech_stackDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Tech_stacks to delete
+     */
+    where?: Tech_stackWhereInput
+    /**
+     * Limit how many Tech_stacks to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Tech_stack without action
+   */
+  export type Tech_stackDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tech_stack
+     */
+    select?: Tech_stackSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Tech_stack
+     */
+    omit?: Tech_stackOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Projects
+   */
+
+  export type AggregateProjects = {
+    _count: ProjectsCountAggregateOutputType | null
+    _avg: ProjectsAvgAggregateOutputType | null
+    _sum: ProjectsSumAggregateOutputType | null
+    _min: ProjectsMinAggregateOutputType | null
+    _max: ProjectsMaxAggregateOutputType | null
+  }
+
+  export type ProjectsAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type ProjectsSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type ProjectsMinAggregateOutputType = {
+    id: number | null
+    name: string | null
+    description: string | null
+    tech_stack: string | null
+    frontend_link: string | null
+    backend_link: string | null
+    img: string | null
+    features: string | null
+  }
+
+  export type ProjectsMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+    description: string | null
+    tech_stack: string | null
+    frontend_link: string | null
+    backend_link: string | null
+    img: string | null
+    features: string | null
+  }
+
+  export type ProjectsCountAggregateOutputType = {
+    id: number
+    name: number
+    description: number
+    tech_stack: number
+    frontend_link: number
+    backend_link: number
+    img: number
+    features: number
+    _all: number
+  }
+
+
+  export type ProjectsAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type ProjectsSumAggregateInputType = {
+    id?: true
+  }
+
+  export type ProjectsMinAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    tech_stack?: true
+    frontend_link?: true
+    backend_link?: true
+    img?: true
+    features?: true
+  }
+
+  export type ProjectsMaxAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    tech_stack?: true
+    frontend_link?: true
+    backend_link?: true
+    img?: true
+    features?: true
+  }
+
+  export type ProjectsCountAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    tech_stack?: true
+    frontend_link?: true
+    backend_link?: true
+    img?: true
+    features?: true
+    _all?: true
+  }
+
+  export type ProjectsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Projects to aggregate.
+     */
+    where?: ProjectsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Projects to fetch.
+     */
+    orderBy?: ProjectsOrderByWithRelationInput | ProjectsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ProjectsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Projects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Projects.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Projects
+    **/
+    _count?: true | ProjectsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ProjectsAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ProjectsSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ProjectsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ProjectsMaxAggregateInputType
+  }
+
+  export type GetProjectsAggregateType<T extends ProjectsAggregateArgs> = {
+        [P in keyof T & keyof AggregateProjects]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateProjects[P]>
+      : GetScalarType<T[P], AggregateProjects[P]>
+  }
+
+
+
+
+  export type ProjectsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProjectsWhereInput
+    orderBy?: ProjectsOrderByWithAggregationInput | ProjectsOrderByWithAggregationInput[]
+    by: ProjectsScalarFieldEnum[] | ProjectsScalarFieldEnum
+    having?: ProjectsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ProjectsCountAggregateInputType | true
+    _avg?: ProjectsAvgAggregateInputType
+    _sum?: ProjectsSumAggregateInputType
+    _min?: ProjectsMinAggregateInputType
+    _max?: ProjectsMaxAggregateInputType
+  }
+
+  export type ProjectsGroupByOutputType = {
+    id: number
+    name: string | null
+    description: string | null
+    tech_stack: string | null
+    frontend_link: string | null
+    backend_link: string | null
+    img: string | null
+    features: string | null
+    _count: ProjectsCountAggregateOutputType | null
+    _avg: ProjectsAvgAggregateOutputType | null
+    _sum: ProjectsSumAggregateOutputType | null
+    _min: ProjectsMinAggregateOutputType | null
+    _max: ProjectsMaxAggregateOutputType | null
+  }
+
+  type GetProjectsGroupByPayload<T extends ProjectsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ProjectsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ProjectsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ProjectsGroupByOutputType[P]>
+            : GetScalarType<T[P], ProjectsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ProjectsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    tech_stack?: boolean
+    frontend_link?: boolean
+    backend_link?: boolean
+    img?: boolean
+    features?: boolean
+  }, ExtArgs["result"]["projects"]>
+
+  export type ProjectsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    tech_stack?: boolean
+    frontend_link?: boolean
+    backend_link?: boolean
+    img?: boolean
+    features?: boolean
+  }, ExtArgs["result"]["projects"]>
+
+  export type ProjectsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    tech_stack?: boolean
+    frontend_link?: boolean
+    backend_link?: boolean
+    img?: boolean
+    features?: boolean
+  }, ExtArgs["result"]["projects"]>
+
+  export type ProjectsSelectScalar = {
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    tech_stack?: boolean
+    frontend_link?: boolean
+    backend_link?: boolean
+    img?: boolean
+    features?: boolean
+  }
+
+  export type ProjectsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "tech_stack" | "frontend_link" | "backend_link" | "img" | "features", ExtArgs["result"]["projects"]>
+
+  export type $ProjectsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Projects"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      name: string | null
+      description: string | null
+      tech_stack: string | null
+      frontend_link: string | null
+      backend_link: string | null
+      img: string | null
+      features: string | null
+    }, ExtArgs["result"]["projects"]>
+    composites: {}
+  }
+
+  type ProjectsGetPayload<S extends boolean | null | undefined | ProjectsDefaultArgs> = $Result.GetResult<Prisma.$ProjectsPayload, S>
+
+  type ProjectsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ProjectsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ProjectsCountAggregateInputType | true
+    }
+
+  export interface ProjectsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Projects'], meta: { name: 'Projects' } }
+    /**
+     * Find zero or one Projects that matches the filter.
+     * @param {ProjectsFindUniqueArgs} args - Arguments to find a Projects
+     * @example
+     * // Get one Projects
+     * const projects = await prisma.projects.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ProjectsFindUniqueArgs>(args: SelectSubset<T, ProjectsFindUniqueArgs<ExtArgs>>): Prisma__ProjectsClient<$Result.GetResult<Prisma.$ProjectsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Projects that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ProjectsFindUniqueOrThrowArgs} args - Arguments to find a Projects
+     * @example
+     * // Get one Projects
+     * const projects = await prisma.projects.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ProjectsFindUniqueOrThrowArgs>(args: SelectSubset<T, ProjectsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ProjectsClient<$Result.GetResult<Prisma.$ProjectsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Projects that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProjectsFindFirstArgs} args - Arguments to find a Projects
+     * @example
+     * // Get one Projects
+     * const projects = await prisma.projects.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ProjectsFindFirstArgs>(args?: SelectSubset<T, ProjectsFindFirstArgs<ExtArgs>>): Prisma__ProjectsClient<$Result.GetResult<Prisma.$ProjectsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Projects that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProjectsFindFirstOrThrowArgs} args - Arguments to find a Projects
+     * @example
+     * // Get one Projects
+     * const projects = await prisma.projects.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ProjectsFindFirstOrThrowArgs>(args?: SelectSubset<T, ProjectsFindFirstOrThrowArgs<ExtArgs>>): Prisma__ProjectsClient<$Result.GetResult<Prisma.$ProjectsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Projects that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProjectsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Projects
+     * const projects = await prisma.projects.findMany()
+     * 
+     * // Get first 10 Projects
+     * const projects = await prisma.projects.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const projectsWithIdOnly = await prisma.projects.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ProjectsFindManyArgs>(args?: SelectSubset<T, ProjectsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProjectsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Projects.
+     * @param {ProjectsCreateArgs} args - Arguments to create a Projects.
+     * @example
+     * // Create one Projects
+     * const Projects = await prisma.projects.create({
+     *   data: {
+     *     // ... data to create a Projects
+     *   }
+     * })
+     * 
+     */
+    create<T extends ProjectsCreateArgs>(args: SelectSubset<T, ProjectsCreateArgs<ExtArgs>>): Prisma__ProjectsClient<$Result.GetResult<Prisma.$ProjectsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Projects.
+     * @param {ProjectsCreateManyArgs} args - Arguments to create many Projects.
+     * @example
+     * // Create many Projects
+     * const projects = await prisma.projects.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ProjectsCreateManyArgs>(args?: SelectSubset<T, ProjectsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Projects and returns the data saved in the database.
+     * @param {ProjectsCreateManyAndReturnArgs} args - Arguments to create many Projects.
+     * @example
+     * // Create many Projects
+     * const projects = await prisma.projects.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Projects and only return the `id`
+     * const projectsWithIdOnly = await prisma.projects.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ProjectsCreateManyAndReturnArgs>(args?: SelectSubset<T, ProjectsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProjectsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Projects.
+     * @param {ProjectsDeleteArgs} args - Arguments to delete one Projects.
+     * @example
+     * // Delete one Projects
+     * const Projects = await prisma.projects.delete({
+     *   where: {
+     *     // ... filter to delete one Projects
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ProjectsDeleteArgs>(args: SelectSubset<T, ProjectsDeleteArgs<ExtArgs>>): Prisma__ProjectsClient<$Result.GetResult<Prisma.$ProjectsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Projects.
+     * @param {ProjectsUpdateArgs} args - Arguments to update one Projects.
+     * @example
+     * // Update one Projects
+     * const projects = await prisma.projects.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ProjectsUpdateArgs>(args: SelectSubset<T, ProjectsUpdateArgs<ExtArgs>>): Prisma__ProjectsClient<$Result.GetResult<Prisma.$ProjectsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Projects.
+     * @param {ProjectsDeleteManyArgs} args - Arguments to filter Projects to delete.
+     * @example
+     * // Delete a few Projects
+     * const { count } = await prisma.projects.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ProjectsDeleteManyArgs>(args?: SelectSubset<T, ProjectsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Projects.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProjectsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Projects
+     * const projects = await prisma.projects.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ProjectsUpdateManyArgs>(args: SelectSubset<T, ProjectsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Projects and returns the data updated in the database.
+     * @param {ProjectsUpdateManyAndReturnArgs} args - Arguments to update many Projects.
+     * @example
+     * // Update many Projects
+     * const projects = await prisma.projects.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Projects and only return the `id`
+     * const projectsWithIdOnly = await prisma.projects.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ProjectsUpdateManyAndReturnArgs>(args: SelectSubset<T, ProjectsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProjectsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Projects.
+     * @param {ProjectsUpsertArgs} args - Arguments to update or create a Projects.
+     * @example
+     * // Update or create a Projects
+     * const projects = await prisma.projects.upsert({
+     *   create: {
+     *     // ... data to create a Projects
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Projects we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ProjectsUpsertArgs>(args: SelectSubset<T, ProjectsUpsertArgs<ExtArgs>>): Prisma__ProjectsClient<$Result.GetResult<Prisma.$ProjectsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Projects.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProjectsCountArgs} args - Arguments to filter Projects to count.
+     * @example
+     * // Count the number of Projects
+     * const count = await prisma.projects.count({
+     *   where: {
+     *     // ... the filter for the Projects we want to count
+     *   }
+     * })
+    **/
+    count<T extends ProjectsCountArgs>(
+      args?: Subset<T, ProjectsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ProjectsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Projects.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProjectsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ProjectsAggregateArgs>(args: Subset<T, ProjectsAggregateArgs>): Prisma.PrismaPromise<GetProjectsAggregateType<T>>
+
+    /**
+     * Group by Projects.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProjectsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ProjectsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ProjectsGroupByArgs['orderBy'] }
+        : { orderBy?: ProjectsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ProjectsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProjectsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Projects model
+   */
+  readonly fields: ProjectsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Projects.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ProjectsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Projects model
+   */
+  interface ProjectsFieldRefs {
+    readonly id: FieldRef<"Projects", 'Int'>
+    readonly name: FieldRef<"Projects", 'String'>
+    readonly description: FieldRef<"Projects", 'String'>
+    readonly tech_stack: FieldRef<"Projects", 'String'>
+    readonly frontend_link: FieldRef<"Projects", 'String'>
+    readonly backend_link: FieldRef<"Projects", 'String'>
+    readonly img: FieldRef<"Projects", 'String'>
+    readonly features: FieldRef<"Projects", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Projects findUnique
+   */
+  export type ProjectsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Projects
+     */
+    select?: ProjectsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Projects
+     */
+    omit?: ProjectsOmit<ExtArgs> | null
+    /**
+     * Filter, which Projects to fetch.
+     */
+    where: ProjectsWhereUniqueInput
+  }
+
+  /**
+   * Projects findUniqueOrThrow
+   */
+  export type ProjectsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Projects
+     */
+    select?: ProjectsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Projects
+     */
+    omit?: ProjectsOmit<ExtArgs> | null
+    /**
+     * Filter, which Projects to fetch.
+     */
+    where: ProjectsWhereUniqueInput
+  }
+
+  /**
+   * Projects findFirst
+   */
+  export type ProjectsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Projects
+     */
+    select?: ProjectsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Projects
+     */
+    omit?: ProjectsOmit<ExtArgs> | null
+    /**
+     * Filter, which Projects to fetch.
+     */
+    where?: ProjectsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Projects to fetch.
+     */
+    orderBy?: ProjectsOrderByWithRelationInput | ProjectsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Projects.
+     */
+    cursor?: ProjectsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Projects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Projects.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Projects.
+     */
+    distinct?: ProjectsScalarFieldEnum | ProjectsScalarFieldEnum[]
+  }
+
+  /**
+   * Projects findFirstOrThrow
+   */
+  export type ProjectsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Projects
+     */
+    select?: ProjectsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Projects
+     */
+    omit?: ProjectsOmit<ExtArgs> | null
+    /**
+     * Filter, which Projects to fetch.
+     */
+    where?: ProjectsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Projects to fetch.
+     */
+    orderBy?: ProjectsOrderByWithRelationInput | ProjectsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Projects.
+     */
+    cursor?: ProjectsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Projects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Projects.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Projects.
+     */
+    distinct?: ProjectsScalarFieldEnum | ProjectsScalarFieldEnum[]
+  }
+
+  /**
+   * Projects findMany
+   */
+  export type ProjectsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Projects
+     */
+    select?: ProjectsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Projects
+     */
+    omit?: ProjectsOmit<ExtArgs> | null
+    /**
+     * Filter, which Projects to fetch.
+     */
+    where?: ProjectsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Projects to fetch.
+     */
+    orderBy?: ProjectsOrderByWithRelationInput | ProjectsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Projects.
+     */
+    cursor?: ProjectsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Projects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Projects.
+     */
+    skip?: number
+    distinct?: ProjectsScalarFieldEnum | ProjectsScalarFieldEnum[]
+  }
+
+  /**
+   * Projects create
+   */
+  export type ProjectsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Projects
+     */
+    select?: ProjectsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Projects
+     */
+    omit?: ProjectsOmit<ExtArgs> | null
+    /**
+     * The data needed to create a Projects.
+     */
+    data?: XOR<ProjectsCreateInput, ProjectsUncheckedCreateInput>
+  }
+
+  /**
+   * Projects createMany
+   */
+  export type ProjectsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Projects.
+     */
+    data: ProjectsCreateManyInput | ProjectsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Projects createManyAndReturn
+   */
+  export type ProjectsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Projects
+     */
+    select?: ProjectsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Projects
+     */
+    omit?: ProjectsOmit<ExtArgs> | null
+    /**
+     * The data used to create many Projects.
+     */
+    data: ProjectsCreateManyInput | ProjectsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Projects update
+   */
+  export type ProjectsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Projects
+     */
+    select?: ProjectsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Projects
+     */
+    omit?: ProjectsOmit<ExtArgs> | null
+    /**
+     * The data needed to update a Projects.
+     */
+    data: XOR<ProjectsUpdateInput, ProjectsUncheckedUpdateInput>
+    /**
+     * Choose, which Projects to update.
+     */
+    where: ProjectsWhereUniqueInput
+  }
+
+  /**
+   * Projects updateMany
+   */
+  export type ProjectsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Projects.
+     */
+    data: XOR<ProjectsUpdateManyMutationInput, ProjectsUncheckedUpdateManyInput>
+    /**
+     * Filter which Projects to update
+     */
+    where?: ProjectsWhereInput
+    /**
+     * Limit how many Projects to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Projects updateManyAndReturn
+   */
+  export type ProjectsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Projects
+     */
+    select?: ProjectsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Projects
+     */
+    omit?: ProjectsOmit<ExtArgs> | null
+    /**
+     * The data used to update Projects.
+     */
+    data: XOR<ProjectsUpdateManyMutationInput, ProjectsUncheckedUpdateManyInput>
+    /**
+     * Filter which Projects to update
+     */
+    where?: ProjectsWhereInput
+    /**
+     * Limit how many Projects to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Projects upsert
+   */
+  export type ProjectsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Projects
+     */
+    select?: ProjectsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Projects
+     */
+    omit?: ProjectsOmit<ExtArgs> | null
+    /**
+     * The filter to search for the Projects to update in case it exists.
+     */
+    where: ProjectsWhereUniqueInput
+    /**
+     * In case the Projects found by the `where` argument doesn't exist, create a new Projects with this data.
+     */
+    create: XOR<ProjectsCreateInput, ProjectsUncheckedCreateInput>
+    /**
+     * In case the Projects was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ProjectsUpdateInput, ProjectsUncheckedUpdateInput>
+  }
+
+  /**
+   * Projects delete
+   */
+  export type ProjectsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Projects
+     */
+    select?: ProjectsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Projects
+     */
+    omit?: ProjectsOmit<ExtArgs> | null
+    /**
+     * Filter which Projects to delete.
+     */
+    where: ProjectsWhereUniqueInput
+  }
+
+  /**
+   * Projects deleteMany
+   */
+  export type ProjectsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Projects to delete
+     */
+    where?: ProjectsWhereInput
+    /**
+     * Limit how many Projects to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Projects without action
+   */
+  export type ProjectsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Projects
+     */
+    select?: ProjectsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Projects
+     */
+    omit?: ProjectsOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -4169,6 +6422,29 @@ export namespace Prisma {
   };
 
   export type WorkExpScalarFieldEnum = (typeof WorkExpScalarFieldEnum)[keyof typeof WorkExpScalarFieldEnum]
+
+
+  export const Tech_stackScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    image_Url: 'image_Url'
+  };
+
+  export type Tech_stackScalarFieldEnum = (typeof Tech_stackScalarFieldEnum)[keyof typeof Tech_stackScalarFieldEnum]
+
+
+  export const ProjectsScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    description: 'description',
+    tech_stack: 'tech_stack',
+    frontend_link: 'frontend_link',
+    backend_link: 'backend_link',
+    img: 'img',
+    features: 'features'
+  };
+
+  export type ProjectsScalarFieldEnum = (typeof ProjectsScalarFieldEnum)[keyof typeof ProjectsScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -4416,6 +6692,119 @@ export namespace Prisma {
     company?: StringNullableWithAggregatesFilter<"WorkExp"> | string | null
   }
 
+  export type Tech_stackWhereInput = {
+    AND?: Tech_stackWhereInput | Tech_stackWhereInput[]
+    OR?: Tech_stackWhereInput[]
+    NOT?: Tech_stackWhereInput | Tech_stackWhereInput[]
+    id?: IntFilter<"Tech_stack"> | number
+    name?: StringNullableFilter<"Tech_stack"> | string | null
+    image_Url?: StringNullableFilter<"Tech_stack"> | string | null
+  }
+
+  export type Tech_stackOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrderInput | SortOrder
+    image_Url?: SortOrderInput | SortOrder
+  }
+
+  export type Tech_stackWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: Tech_stackWhereInput | Tech_stackWhereInput[]
+    OR?: Tech_stackWhereInput[]
+    NOT?: Tech_stackWhereInput | Tech_stackWhereInput[]
+    name?: StringNullableFilter<"Tech_stack"> | string | null
+    image_Url?: StringNullableFilter<"Tech_stack"> | string | null
+  }, "id">
+
+  export type Tech_stackOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrderInput | SortOrder
+    image_Url?: SortOrderInput | SortOrder
+    _count?: Tech_stackCountOrderByAggregateInput
+    _avg?: Tech_stackAvgOrderByAggregateInput
+    _max?: Tech_stackMaxOrderByAggregateInput
+    _min?: Tech_stackMinOrderByAggregateInput
+    _sum?: Tech_stackSumOrderByAggregateInput
+  }
+
+  export type Tech_stackScalarWhereWithAggregatesInput = {
+    AND?: Tech_stackScalarWhereWithAggregatesInput | Tech_stackScalarWhereWithAggregatesInput[]
+    OR?: Tech_stackScalarWhereWithAggregatesInput[]
+    NOT?: Tech_stackScalarWhereWithAggregatesInput | Tech_stackScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Tech_stack"> | number
+    name?: StringNullableWithAggregatesFilter<"Tech_stack"> | string | null
+    image_Url?: StringNullableWithAggregatesFilter<"Tech_stack"> | string | null
+  }
+
+  export type ProjectsWhereInput = {
+    AND?: ProjectsWhereInput | ProjectsWhereInput[]
+    OR?: ProjectsWhereInput[]
+    NOT?: ProjectsWhereInput | ProjectsWhereInput[]
+    id?: IntFilter<"Projects"> | number
+    name?: StringNullableFilter<"Projects"> | string | null
+    description?: StringNullableFilter<"Projects"> | string | null
+    tech_stack?: StringNullableFilter<"Projects"> | string | null
+    frontend_link?: StringNullableFilter<"Projects"> | string | null
+    backend_link?: StringNullableFilter<"Projects"> | string | null
+    img?: StringNullableFilter<"Projects"> | string | null
+    features?: StringNullableFilter<"Projects"> | string | null
+  }
+
+  export type ProjectsOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    tech_stack?: SortOrderInput | SortOrder
+    frontend_link?: SortOrderInput | SortOrder
+    backend_link?: SortOrderInput | SortOrder
+    img?: SortOrderInput | SortOrder
+    features?: SortOrderInput | SortOrder
+  }
+
+  export type ProjectsWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: ProjectsWhereInput | ProjectsWhereInput[]
+    OR?: ProjectsWhereInput[]
+    NOT?: ProjectsWhereInput | ProjectsWhereInput[]
+    name?: StringNullableFilter<"Projects"> | string | null
+    description?: StringNullableFilter<"Projects"> | string | null
+    tech_stack?: StringNullableFilter<"Projects"> | string | null
+    frontend_link?: StringNullableFilter<"Projects"> | string | null
+    backend_link?: StringNullableFilter<"Projects"> | string | null
+    img?: StringNullableFilter<"Projects"> | string | null
+    features?: StringNullableFilter<"Projects"> | string | null
+  }, "id">
+
+  export type ProjectsOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    tech_stack?: SortOrderInput | SortOrder
+    frontend_link?: SortOrderInput | SortOrder
+    backend_link?: SortOrderInput | SortOrder
+    img?: SortOrderInput | SortOrder
+    features?: SortOrderInput | SortOrder
+    _count?: ProjectsCountOrderByAggregateInput
+    _avg?: ProjectsAvgOrderByAggregateInput
+    _max?: ProjectsMaxOrderByAggregateInput
+    _min?: ProjectsMinOrderByAggregateInput
+    _sum?: ProjectsSumOrderByAggregateInput
+  }
+
+  export type ProjectsScalarWhereWithAggregatesInput = {
+    AND?: ProjectsScalarWhereWithAggregatesInput | ProjectsScalarWhereWithAggregatesInput[]
+    OR?: ProjectsScalarWhereWithAggregatesInput[]
+    NOT?: ProjectsScalarWhereWithAggregatesInput | ProjectsScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Projects"> | number
+    name?: StringNullableWithAggregatesFilter<"Projects"> | string | null
+    description?: StringNullableWithAggregatesFilter<"Projects"> | string | null
+    tech_stack?: StringNullableWithAggregatesFilter<"Projects"> | string | null
+    frontend_link?: StringNullableWithAggregatesFilter<"Projects"> | string | null
+    backend_link?: StringNullableWithAggregatesFilter<"Projects"> | string | null
+    img?: StringNullableWithAggregatesFilter<"Projects"> | string | null
+    features?: StringNullableWithAggregatesFilter<"Projects"> | string | null
+  }
+
   export type BlogCreateInput = {
     title: string
     content: string
@@ -4566,6 +6955,119 @@ export namespace Prisma {
     years?: NullableStringFieldUpdateOperationsInput | string | null
     description_?: NullableStringFieldUpdateOperationsInput | string | null
     company?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type Tech_stackCreateInput = {
+    name?: string | null
+    image_Url?: string | null
+  }
+
+  export type Tech_stackUncheckedCreateInput = {
+    id?: number
+    name?: string | null
+    image_Url?: string | null
+  }
+
+  export type Tech_stackUpdateInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    image_Url?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type Tech_stackUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    image_Url?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type Tech_stackCreateManyInput = {
+    id?: number
+    name?: string | null
+    image_Url?: string | null
+  }
+
+  export type Tech_stackUpdateManyMutationInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    image_Url?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type Tech_stackUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    image_Url?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ProjectsCreateInput = {
+    name?: string | null
+    description?: string | null
+    tech_stack?: string | null
+    frontend_link?: string | null
+    backend_link?: string | null
+    img?: string | null
+    features?: string | null
+  }
+
+  export type ProjectsUncheckedCreateInput = {
+    id?: number
+    name?: string | null
+    description?: string | null
+    tech_stack?: string | null
+    frontend_link?: string | null
+    backend_link?: string | null
+    img?: string | null
+    features?: string | null
+  }
+
+  export type ProjectsUpdateInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    tech_stack?: NullableStringFieldUpdateOperationsInput | string | null
+    frontend_link?: NullableStringFieldUpdateOperationsInput | string | null
+    backend_link?: NullableStringFieldUpdateOperationsInput | string | null
+    img?: NullableStringFieldUpdateOperationsInput | string | null
+    features?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ProjectsUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    tech_stack?: NullableStringFieldUpdateOperationsInput | string | null
+    frontend_link?: NullableStringFieldUpdateOperationsInput | string | null
+    backend_link?: NullableStringFieldUpdateOperationsInput | string | null
+    img?: NullableStringFieldUpdateOperationsInput | string | null
+    features?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ProjectsCreateManyInput = {
+    id?: number
+    name?: string | null
+    description?: string | null
+    tech_stack?: string | null
+    frontend_link?: string | null
+    backend_link?: string | null
+    img?: string | null
+    features?: string | null
+  }
+
+  export type ProjectsUpdateManyMutationInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    tech_stack?: NullableStringFieldUpdateOperationsInput | string | null
+    frontend_link?: NullableStringFieldUpdateOperationsInput | string | null
+    backend_link?: NullableStringFieldUpdateOperationsInput | string | null
+    img?: NullableStringFieldUpdateOperationsInput | string | null
+    features?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ProjectsUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    tech_stack?: NullableStringFieldUpdateOperationsInput | string | null
+    frontend_link?: NullableStringFieldUpdateOperationsInput | string | null
+    backend_link?: NullableStringFieldUpdateOperationsInput | string | null
+    img?: NullableStringFieldUpdateOperationsInput | string | null
+    features?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -4781,6 +7283,73 @@ export namespace Prisma {
   }
 
   export type WorkExpSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type Tech_stackCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    image_Url?: SortOrder
+  }
+
+  export type Tech_stackAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type Tech_stackMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    image_Url?: SortOrder
+  }
+
+  export type Tech_stackMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    image_Url?: SortOrder
+  }
+
+  export type Tech_stackSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type ProjectsCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    tech_stack?: SortOrder
+    frontend_link?: SortOrder
+    backend_link?: SortOrder
+    img?: SortOrder
+    features?: SortOrder
+  }
+
+  export type ProjectsAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type ProjectsMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    tech_stack?: SortOrder
+    frontend_link?: SortOrder
+    backend_link?: SortOrder
+    img?: SortOrder
+    features?: SortOrder
+  }
+
+  export type ProjectsMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    tech_stack?: SortOrder
+    frontend_link?: SortOrder
+    backend_link?: SortOrder
+    img?: SortOrder
+    features?: SortOrder
+  }
+
+  export type ProjectsSumOrderByAggregateInput = {
     id?: SortOrder
   }
 

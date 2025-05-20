@@ -31,7 +31,7 @@ export default function RootLayout({
 {
   return (
     <html lang="en">
-      <body className="relative min-h-screen overflow-x-hidden bg-slate-800">
+      <body className="relative min-h-screen overflow-x-hidden bg-slate-800 ">
        <div className="grid mt-10 justify-items-center">
         <LayoutHeader />
        </div>
@@ -65,7 +65,7 @@ export default function RootLayout({
 
 
         {/* เนื้อหาเว็บไซต์ */}
-        <main className="grid mt-20 justify-items-center">
+        <main className="grid mt-20 justify-items-center tracking-widest">
           {children}
         </main>
       </body>

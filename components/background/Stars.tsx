@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export function Stars() {
     
 
-  const stars = Array.from({ length: 100 }, (_, i) => ({
+  const stars = Array.from({ length: 300 }, (_, i) => ({
     id: i,
     top: Math.random() * 100 + "%",
     left: Math.random() * 100 + "%",

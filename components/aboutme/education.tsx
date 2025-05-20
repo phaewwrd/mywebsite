@@ -1,33 +1,45 @@
-import { fetchEducation } from '@/libs/data'
+'use client";'
+import { fetchEducation } from "@/libs/data";
+import { GraduationCap } from "lucide-react";
+import EduCard from "@/components/aboutme/edu-card"
 
 export default async function Education() {
-      const eduData = await fetchEducation()
+  const eduData = await fetchEducation();
+  const shootingStarStyle = {
+    className: "shooting-star",
+    style: [
+      { top: "10%", animationDelay: "1s" },
+      { top: "20%", animationDelay: "3s" },
+      { top: "50%", animationDelay: "5s" },
+      { top: "70%", animationDelay: "7s" },
+    ],
+  };
+  // console.log(eduData);
 
   return (
-     <div className="flex flex-col gap-5 p-20 place-items-center max-sm:p-5">
-        <div className="text-center  mb-10 ">
-          <div className="text-2xl font-bold flex justify-center place-items-center gap-5">
-            Education and Training
-         
+    <div className="bg-gradient-to-b from-slate-800 via-slate-900 to-slate-800 py-20 px-10 relative overflow-hidden">
+      {shootingStarStyle.style.map((style, index) => (
+        <div key={index} className={shootingStarStyle.className} style={{ ...style }} />
+      ))}
+
+      <div className="z-10 relative">
+        <div className="flex flex-col justify-center place-items-center ">
+          <div
+            className="text-[clamp(2rem,6vmin,10rem)] font-bold text-slate-300 flex gap-2 tracking-wider"
+            style={{ textShadow: "0 0 10px rgba(255, 255, 255, 0.5)" }}
+          >
+            Education and Certificate
+            <GraduationCap className="text-amber-50 w-10 h-10 mb-2" />
           </div>
-          <div className="mr-60 ml-60 mt-2 max-sm:w-70 max-sm:mr-5 max-sm:ml-5 max-md:w-100">
-            "Formal Education & Self-Directed Learning."
-          </div>
+          <div className="text-xl">"Formal Education & Self-Directed Learning."</div>
         </div>
 
-        <div>
-          {eduData.map((edu) => (
-            <div
-              key={edu.id}
-              className="flex flex-col gap-2 font-medium max-sm:w-70 max-sm:mr-5 max-sm:ml-5 max-md:w-100"
-            >
-              <div>{edu.org_name}</div>
-              <div>{edu.subject}</div>
-              <div>{edu.years}</div>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 text-slate-300 relative overflow-hidden">
+          {eduData?.map((edu, index) => (
+            <EduCard key={edu.id} edu={edu} delay={index * 0.3} />
           ))}
         </div>
-       
       </div>
-  )
+    </div>
+  );
 }

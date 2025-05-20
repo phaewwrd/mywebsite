@@ -30,3 +30,20 @@ model WorkExp {
   description_ String? @map("description ")
   company      String?
 }
+
+model Tech_stack {
+  id        Int     @id @default(autoincrement())
+  name      String?
+  image_Url String?
+}
+
+model Projects {
+  id            Int     @id @default(autoincrement())
+  name          String?
+  description   String?
+  tech_stack    String?
+  frontend_link String?
+  backend_link  String?
+  img           String?
+  features      String?
+}

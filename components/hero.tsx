@@ -1,5 +1,4 @@
 'use client'
-import HoverSlide from "./hover-btn";
 import { useState } from 'react';
 
 export default function HeroSection() {

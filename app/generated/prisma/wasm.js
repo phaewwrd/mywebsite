@@ -143,6 +143,23 @@ exports.Prisma.WorkExpScalarFieldEnum = {
   company: 'company'
 };
 
+exports.Prisma.Tech_stackScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  image_Url: 'image_Url'
+};
+
+exports.Prisma.ProjectsScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  tech_stack: 'tech_stack',
+  frontend_link: 'frontend_link',
+  backend_link: 'backend_link',
+  img: 'img',
+  features: 'features'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -162,7 +179,9 @@ exports.Prisma.NullsOrder = {
 exports.Prisma.ModelName = {
   Blog: 'Blog',
   Education: 'Education',
-  WorkExp: 'WorkExp'
+  WorkExp: 'WorkExp',
+  Tech_stack: 'Tech_stack',
+  Projects: 'Projects'
 };
 
 /**
