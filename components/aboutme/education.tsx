@@ -22,7 +22,7 @@ export default async function Education() {
         <div key={index} className={shootingStarStyle.className} style={{ ...style }} />
       ))}
 
-      <div className="z-10 relative">
+      <div className=" relative">
         <div className="flex flex-col justify-center place-items-center ">
           <div
             className="text-[clamp(2rem,6vmin,10rem)] font-bold text-slate-300 flex gap-2 tracking-wider"

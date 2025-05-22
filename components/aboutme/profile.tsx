@@ -1,6 +1,8 @@
 'use client';
 
+import { Metadata } from 'next';
 import React, { useEffect, useState } from 'react';
+
 
 export default function Profile() {
   const messages = [
@@ -37,7 +39,7 @@ export default function Profile() {
   }, [charIndex, textIndex]);
 
   return (
-    <div className="text-center bg-slate-900 py-20 text-white">
+    <div className="text-center bg-slate-900 py-20 text-white pt-40">
       <div
         className="text-[clamp(2rem,6vmin,10rem)] font-extrabold leading-none"
         style={{

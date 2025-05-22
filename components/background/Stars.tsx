@@ -17,7 +17,7 @@ export function Stars() {
       {stars.map((star) => (
         <motion.div
           key={star.id}
-          className="bg-white rounded-full absolute"
+          className="bg-white rounded-full absolute z-10"
           style={{
             top: star.top,
             left: star.left,

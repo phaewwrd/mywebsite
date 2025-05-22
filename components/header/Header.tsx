@@ -2,10 +2,12 @@
 import { div } from "framer-motion/client";
 import { AlignJustify } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 export default function Header() {
   const [isMobile, setIsMobile] = useState(false);
+   const pathname = usePathname();
 
   useEffect(() => {
     const handleResize = () => {
@@ -18,31 +20,64 @@ export default function Header() {
   }, []);
 
   return (
-    <div className=" absolute max-w-screen rounded-xl m-10 md:absolute md:w-3/4">
-      <div className="">
-        <nav>
-          <ul className="p-6 flex gap-10 rounded-md bg-yellow-50  text-cyan-600 font-bold">
-            <li>
-              <Link href="/" aria-label="Home Page">
-                Phaewphan Wrd.
-              </Link>
-            </li>
-            /
-             <li>
-              <Link href="/project" aria-label="Home Page">
-                PROJECTS
-              </Link>
-            </li>
-            /
-            <li>
-              <Link href="/blog" aria-label="Home Page">
-                BLOG
-              </Link>
-            </li>
-           
-          </ul>
-        </nav>
-      </div>
-    </div>
+     <nav className=" rounded-xl w-3/4  bg-yellow-50 fixed top-10 z-10 shadow-md shadow-cyan-400/50 backdrop-blur-sm">
+      <ul className="p-6 flex gap-10 rounded-md   text-cyan-600 font-bold">
+        <li>
+          <a
+            href="/"
+            className={`group relative px-2 py-1 font-bold text-cyan-600 ${
+              pathname === "/"
+                ? "after:w-full text-cyan-900 px-3 py-2 rounded-lg"
+                : ""
+            }`}
+          >
+            HOME
+            <span className="absolute left-0 -bottom-1.5 h-[2px] bg-yellow-400 transition-all duration-300 w-0 group-hover:w-full" />
+          </a>
+        </li>
+        /
+        <li>
+          <a
+            href="#aboutme"
+            className={`group relative px-2 py-1 font-bold text-cyan-600 ${
+              pathname === "/aboutme"
+                ? "after:w-full text-cyan-900 px-3 py-2 rounded-lg"
+                : ""
+            }`}
+          >
+            ABOUT ME
+            <span className="absolute left-0 -bottom-1.5 h-[2px] bg-yellow-400 transition-all duration-300 w-0 group-hover:w-full" />
+          </a>
+        </li>
+        /
+        <li>
+          <a
+            href="#projects"
+            className={`group relative px-2 py-1 font-bold text-cyan-600 ${
+              pathname === "/project"
+                ? "after:w-full text-cyan-900 px-3 py-2 rounded-lg"
+                : ""
+            }`}
+          >
+            PROJECTS
+            <span className={`absolute left-0 -bottom-1.5 h-[2px]  bg-yellow-400 transition-all duration-300 w-0 group-hover:w-full`} />
+          </a>
+        </li>
+        /
+        <li>
+          <a
+            href="#blog"
+            className={`group relative px-2 py-1 font-bold text-cyan-600 ${
+              pathname === "/blog"
+                ? "after:w-full text-cyan-900 px-3 py-2 rounded-lg"
+                : ""
+            }`}
+          >
+            BLOG
+            <span className="absolute left-0 -bottom-1.5 h-[2px] bg-yellow-400 transition-all duration-300 w-0 group-hover:w-full" />
+          </a>
+        </li>
+      </ul>
+    </nav>
   );
 }

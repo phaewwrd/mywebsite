@@ -56,3 +56,37 @@
 }
 
 
+.custom-link {
+  background-color: #222a36; /* bg-slate-600 */
+  color: #fffaae;            /* text-amber-200 */
+  font-weight: 600;          /* font-semibold */
+  padding-top: 0.75rem;      /* py-3 */
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;        /* px-4 */
+  padding-right: 1rem;
+  border-radius: 0.75rem;    /* rounded-xl */
+  transition: background-color 0.2s; /* for hover effect */
+}
+
+.custom-link:hover {
+  background-color: #475569; /* hover:bg-slate-600 */
+}
+
+@keyframes underlineSlide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+}
+
+.animate-underline {
+  animation: underlineSlide 2s linear infinite;
+}

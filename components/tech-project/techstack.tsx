@@ -13,7 +13,7 @@ export default async function TechStack() {
       <div className="flex animate-marquee space-x-10 w-max">
         {duplicated.map((tech) => (
           <div
-            // key={tech.id}
+            key={tech.id+Math.random()}
             className="group flex flex-col items-center p-4 hover:scale-110 transition-transform"
           >
             {tech.image_Url ? (
@@ -35,7 +35,7 @@ export default async function TechStack() {
       <div className="flex animate-marquee-reverse space-x-10 w-max">
         {duplicated2.map((tech) => (
           <div
-            // key={tech.id}
+            key={tech.id+Math.random()}
             className="group flex flex-col items-center p-4 hover:scale-110 transition-transform"
           >
             {tech.image_Url ? (

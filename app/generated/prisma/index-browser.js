@@ -154,10 +154,12 @@ exports.Prisma.ProjectsScalarFieldEnum = {
   name: 'name',
   description: 'description',
   tech_stack: 'tech_stack',
-  frontend_link: 'frontend_link',
-  backend_link: 'backend_link',
+  github: 'github',
   img: 'img',
-  features: 'features'
+  features: 'features',
+  video: 'video',
+  front: 'front',
+  back: 'back'
 };
 
 exports.Prisma.SortOrder = {

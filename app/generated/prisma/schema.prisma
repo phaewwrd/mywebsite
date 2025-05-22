@@ -38,12 +38,14 @@ model Tech_stack {
 }
 
 model Projects {
-  id            Int     @id @default(autoincrement())
-  name          String?
-  description   String?
-  tech_stack    String?
-  frontend_link String?
-  backend_link  String?
-  img           String?
-  features      String?
+  id          Int     @id @default(autoincrement())
+  name        String?
+  description String?
+  tech_stack  String?
+  github      String?
+  img         String?
+  features    String?
+  video       String?
+  front       String?
+  back        String?
 }

@@ -5335,10 +5335,12 @@ export namespace Prisma {
     name: string | null
     description: string | null
     tech_stack: string | null
-    frontend_link: string | null
-    backend_link: string | null
+    github: string | null
     img: string | null
     features: string | null
+    video: string | null
+    front: string | null
+    back: string | null
   }
 
   export type ProjectsMaxAggregateOutputType = {
@@ -5346,10 +5348,12 @@ export namespace Prisma {
     name: string | null
     description: string | null
     tech_stack: string | null
-    frontend_link: string | null
-    backend_link: string | null
+    github: string | null
     img: string | null
     features: string | null
+    video: string | null
+    front: string | null
+    back: string | null
   }
 
   export type ProjectsCountAggregateOutputType = {
@@ -5357,10 +5361,12 @@ export namespace Prisma {
     name: number
     description: number
     tech_stack: number
-    frontend_link: number
-    backend_link: number
+    github: number
     img: number
     features: number
+    video: number
+    front: number
+    back: number
     _all: number
   }
 
@@ -5378,10 +5384,12 @@ export namespace Prisma {
     name?: true
     description?: true
     tech_stack?: true
-    frontend_link?: true
-    backend_link?: true
+    github?: true
     img?: true
     features?: true
+    video?: true
+    front?: true
+    back?: true
   }
 
   export type ProjectsMaxAggregateInputType = {
@@ -5389,10 +5397,12 @@ export namespace Prisma {
     name?: true
     description?: true
     tech_stack?: true
-    frontend_link?: true
-    backend_link?: true
+    github?: true
     img?: true
     features?: true
+    video?: true
+    front?: true
+    back?: true
   }
 
   export type ProjectsCountAggregateInputType = {
@@ -5400,10 +5410,12 @@ export namespace Prisma {
     name?: true
     description?: true
     tech_stack?: true
-    frontend_link?: true
-    backend_link?: true
+    github?: true
     img?: true
     features?: true
+    video?: true
+    front?: true
+    back?: true
     _all?: true
   }
 
@@ -5498,10 +5510,12 @@ export namespace Prisma {
     name: string | null
     description: string | null
     tech_stack: string | null
-    frontend_link: string | null
-    backend_link: string | null
+    github: string | null
     img: string | null
     features: string | null
+    video: string | null
+    front: string | null
+    back: string | null
     _count: ProjectsCountAggregateOutputType | null
     _avg: ProjectsAvgAggregateOutputType | null
     _sum: ProjectsSumAggregateOutputType | null
@@ -5528,10 +5542,12 @@ export namespace Prisma {
     name?: boolean
     description?: boolean
     tech_stack?: boolean
-    frontend_link?: boolean
-    backend_link?: boolean
+    github?: boolean
     img?: boolean
     features?: boolean
+    video?: boolean
+    front?: boolean
+    back?: boolean
   }, ExtArgs["result"]["projects"]>
 
   export type ProjectsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -5539,10 +5555,12 @@ export namespace Prisma {
     name?: boolean
     description?: boolean
     tech_stack?: boolean
-    frontend_link?: boolean
-    backend_link?: boolean
+    github?: boolean
     img?: boolean
     features?: boolean
+    video?: boolean
+    front?: boolean
+    back?: boolean
   }, ExtArgs["result"]["projects"]>
 
   export type ProjectsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -5550,10 +5568,12 @@ export namespace Prisma {
     name?: boolean
     description?: boolean
     tech_stack?: boolean
-    frontend_link?: boolean
-    backend_link?: boolean
+    github?: boolean
     img?: boolean
     features?: boolean
+    video?: boolean
+    front?: boolean
+    back?: boolean
   }, ExtArgs["result"]["projects"]>
 
   export type ProjectsSelectScalar = {
@@ -5561,13 +5581,15 @@ export namespace Prisma {
     name?: boolean
     description?: boolean
     tech_stack?: boolean
-    frontend_link?: boolean
-    backend_link?: boolean
+    github?: boolean
     img?: boolean
     features?: boolean
+    video?: boolean
+    front?: boolean
+    back?: boolean
   }
 
-  export type ProjectsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "tech_stack" | "frontend_link" | "backend_link" | "img" | "features", ExtArgs["result"]["projects"]>
+  export type ProjectsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "tech_stack" | "github" | "img" | "features" | "video" | "front" | "back", ExtArgs["result"]["projects"]>
 
   export type $ProjectsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Projects"
@@ -5577,10 +5599,12 @@ export namespace Prisma {
       name: string | null
       description: string | null
       tech_stack: string | null
-      frontend_link: string | null
-      backend_link: string | null
+      github: string | null
       img: string | null
       features: string | null
+      video: string | null
+      front: string | null
+      back: string | null
     }, ExtArgs["result"]["projects"]>
     composites: {}
   }
@@ -6008,10 +6032,12 @@ export namespace Prisma {
     readonly name: FieldRef<"Projects", 'String'>
     readonly description: FieldRef<"Projects", 'String'>
     readonly tech_stack: FieldRef<"Projects", 'String'>
-    readonly frontend_link: FieldRef<"Projects", 'String'>
-    readonly backend_link: FieldRef<"Projects", 'String'>
+    readonly github: FieldRef<"Projects", 'String'>
     readonly img: FieldRef<"Projects", 'String'>
     readonly features: FieldRef<"Projects", 'String'>
+    readonly video: FieldRef<"Projects", 'String'>
+    readonly front: FieldRef<"Projects", 'String'>
+    readonly back: FieldRef<"Projects", 'String'>
   }
     
 
@@ -6438,10 +6464,12 @@ export namespace Prisma {
     name: 'name',
     description: 'description',
     tech_stack: 'tech_stack',
-    frontend_link: 'frontend_link',
-    backend_link: 'backend_link',
+    github: 'github',
     img: 'img',
-    features: 'features'
+    features: 'features',
+    video: 'video',
+    front: 'front',
+    back: 'back'
   };
 
   export type ProjectsScalarFieldEnum = (typeof ProjectsScalarFieldEnum)[keyof typeof ProjectsScalarFieldEnum]
@@ -6744,10 +6772,12 @@ export namespace Prisma {
     name?: StringNullableFilter<"Projects"> | string | null
     description?: StringNullableFilter<"Projects"> | string | null
     tech_stack?: StringNullableFilter<"Projects"> | string | null
-    frontend_link?: StringNullableFilter<"Projects"> | string | null
-    backend_link?: StringNullableFilter<"Projects"> | string | null
+    github?: StringNullableFilter<"Projects"> | string | null
     img?: StringNullableFilter<"Projects"> | string | null
     features?: StringNullableFilter<"Projects"> | string | null
+    video?: StringNullableFilter<"Projects"> | string | null
+    front?: StringNullableFilter<"Projects"> | string | null
+    back?: StringNullableFilter<"Projects"> | string | null
   }
 
   export type ProjectsOrderByWithRelationInput = {
@@ -6755,10 +6785,12 @@ export namespace Prisma {
     name?: SortOrderInput | SortOrder
     description?: SortOrderInput | SortOrder
     tech_stack?: SortOrderInput | SortOrder
-    frontend_link?: SortOrderInput | SortOrder
-    backend_link?: SortOrderInput | SortOrder
+    github?: SortOrderInput | SortOrder
     img?: SortOrderInput | SortOrder
     features?: SortOrderInput | SortOrder
+    video?: SortOrderInput | SortOrder
+    front?: SortOrderInput | SortOrder
+    back?: SortOrderInput | SortOrder
   }
 
   export type ProjectsWhereUniqueInput = Prisma.AtLeast<{
@@ -6769,10 +6801,12 @@ export namespace Prisma {
     name?: StringNullableFilter<"Projects"> | string | null
     description?: StringNullableFilter<"Projects"> | string | null
     tech_stack?: StringNullableFilter<"Projects"> | string | null
-    frontend_link?: StringNullableFilter<"Projects"> | string | null
-    backend_link?: StringNullableFilter<"Projects"> | string | null
+    github?: StringNullableFilter<"Projects"> | string | null
     img?: StringNullableFilter<"Projects"> | string | null
     features?: StringNullableFilter<"Projects"> | string | null
+    video?: StringNullableFilter<"Projects"> | string | null
+    front?: StringNullableFilter<"Projects"> | string | null
+    back?: StringNullableFilter<"Projects"> | string | null
   }, "id">
 
   export type ProjectsOrderByWithAggregationInput = {
@@ -6780,10 +6814,12 @@ export namespace Prisma {
     name?: SortOrderInput | SortOrder
     description?: SortOrderInput | SortOrder
     tech_stack?: SortOrderInput | SortOrder
-    frontend_link?: SortOrderInput | SortOrder
-    backend_link?: SortOrderInput | SortOrder
+    github?: SortOrderInput | SortOrder
     img?: SortOrderInput | SortOrder
     features?: SortOrderInput | SortOrder
+    video?: SortOrderInput | SortOrder
+    front?: SortOrderInput | SortOrder
+    back?: SortOrderInput | SortOrder
     _count?: ProjectsCountOrderByAggregateInput
     _avg?: ProjectsAvgOrderByAggregateInput
     _max?: ProjectsMaxOrderByAggregateInput
@@ -6799,10 +6835,12 @@ export namespace Prisma {
     name?: StringNullableWithAggregatesFilter<"Projects"> | string | null
     description?: StringNullableWithAggregatesFilter<"Projects"> | string | null
     tech_stack?: StringNullableWithAggregatesFilter<"Projects"> | string | null
-    frontend_link?: StringNullableWithAggregatesFilter<"Projects"> | string | null
-    backend_link?: StringNullableWithAggregatesFilter<"Projects"> | string | null
+    github?: StringNullableWithAggregatesFilter<"Projects"> | string | null
     img?: StringNullableWithAggregatesFilter<"Projects"> | string | null
     features?: StringNullableWithAggregatesFilter<"Projects"> | string | null
+    video?: StringNullableWithAggregatesFilter<"Projects"> | string | null
+    front?: StringNullableWithAggregatesFilter<"Projects"> | string | null
+    back?: StringNullableWithAggregatesFilter<"Projects"> | string | null
   }
 
   export type BlogCreateInput = {
@@ -7000,10 +7038,12 @@ export namespace Prisma {
     name?: string | null
     description?: string | null
     tech_stack?: string | null
-    frontend_link?: string | null
-    backend_link?: string | null
+    github?: string | null
     img?: string | null
     features?: string | null
+    video?: string | null
+    front?: string | null
+    back?: string | null
   }
 
   export type ProjectsUncheckedCreateInput = {
@@ -7011,20 +7051,24 @@ export namespace Prisma {
     name?: string | null
     description?: string | null
     tech_stack?: string | null
-    frontend_link?: string | null
-    backend_link?: string | null
+    github?: string | null
     img?: string | null
     features?: string | null
+    video?: string | null
+    front?: string | null
+    back?: string | null
   }
 
   export type ProjectsUpdateInput = {
     name?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     tech_stack?: NullableStringFieldUpdateOperationsInput | string | null
-    frontend_link?: NullableStringFieldUpdateOperationsInput | string | null
-    backend_link?: NullableStringFieldUpdateOperationsInput | string | null
+    github?: NullableStringFieldUpdateOperationsInput | string | null
     img?: NullableStringFieldUpdateOperationsInput | string | null
     features?: NullableStringFieldUpdateOperationsInput | string | null
+    video?: NullableStringFieldUpdateOperationsInput | string | null
+    front?: NullableStringFieldUpdateOperationsInput | string | null
+    back?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ProjectsUncheckedUpdateInput = {
@@ -7032,10 +7076,12 @@ export namespace Prisma {
     name?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     tech_stack?: NullableStringFieldUpdateOperationsInput | string | null
-    frontend_link?: NullableStringFieldUpdateOperationsInput | string | null
-    backend_link?: NullableStringFieldUpdateOperationsInput | string | null
+    github?: NullableStringFieldUpdateOperationsInput | string | null
     img?: NullableStringFieldUpdateOperationsInput | string | null
     features?: NullableStringFieldUpdateOperationsInput | string | null
+    video?: NullableStringFieldUpdateOperationsInput | string | null
+    front?: NullableStringFieldUpdateOperationsInput | string | null
+    back?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ProjectsCreateManyInput = {
@@ -7043,20 +7089,24 @@ export namespace Prisma {
     name?: string | null
     description?: string | null
     tech_stack?: string | null
-    frontend_link?: string | null
-    backend_link?: string | null
+    github?: string | null
     img?: string | null
     features?: string | null
+    video?: string | null
+    front?: string | null
+    back?: string | null
   }
 
   export type ProjectsUpdateManyMutationInput = {
     name?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     tech_stack?: NullableStringFieldUpdateOperationsInput | string | null
-    frontend_link?: NullableStringFieldUpdateOperationsInput | string | null
-    backend_link?: NullableStringFieldUpdateOperationsInput | string | null
+    github?: NullableStringFieldUpdateOperationsInput | string | null
     img?: NullableStringFieldUpdateOperationsInput | string | null
     features?: NullableStringFieldUpdateOperationsInput | string | null
+    video?: NullableStringFieldUpdateOperationsInput | string | null
+    front?: NullableStringFieldUpdateOperationsInput | string | null
+    back?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ProjectsUncheckedUpdateManyInput = {
@@ -7064,10 +7114,12 @@ export namespace Prisma {
     name?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     tech_stack?: NullableStringFieldUpdateOperationsInput | string | null
-    frontend_link?: NullableStringFieldUpdateOperationsInput | string | null
-    backend_link?: NullableStringFieldUpdateOperationsInput | string | null
+    github?: NullableStringFieldUpdateOperationsInput | string | null
     img?: NullableStringFieldUpdateOperationsInput | string | null
     features?: NullableStringFieldUpdateOperationsInput | string | null
+    video?: NullableStringFieldUpdateOperationsInput | string | null
+    front?: NullableStringFieldUpdateOperationsInput | string | null
+    back?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -7317,10 +7369,12 @@ export namespace Prisma {
     name?: SortOrder
     description?: SortOrder
     tech_stack?: SortOrder
-    frontend_link?: SortOrder
-    backend_link?: SortOrder
+    github?: SortOrder
     img?: SortOrder
     features?: SortOrder
+    video?: SortOrder
+    front?: SortOrder
+    back?: SortOrder
   }
 
   export type ProjectsAvgOrderByAggregateInput = {
@@ -7332,10 +7386,12 @@ export namespace Prisma {
     name?: SortOrder
     description?: SortOrder
     tech_stack?: SortOrder
-    frontend_link?: SortOrder
-    backend_link?: SortOrder
+    github?: SortOrder
     img?: SortOrder
     features?: SortOrder
+    video?: SortOrder
+    front?: SortOrder
+    back?: SortOrder
   }
 
   export type ProjectsMinOrderByAggregateInput = {
@@ -7343,10 +7399,12 @@ export namespace Prisma {
     name?: SortOrder
     description?: SortOrder
     tech_stack?: SortOrder
-    frontend_link?: SortOrder
-    backend_link?: SortOrder
+    github?: SortOrder
     img?: SortOrder
     features?: SortOrder
+    video?: SortOrder
+    front?: SortOrder
+    back?: SortOrder
   }
 
   export type ProjectsSumOrderByAggregateInput = {
