@@ -1,14 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
 
-import Link from "next/link";
-import { div } from "framer-motion/client";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import Dektop from "./Dektop";
+import Desktop from "./Desktop";
 import Mobile from "./Mobile";
 
 export default function LayoutHeader() {
   const [isMobile, setIsMobile] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -16,10 +15,14 @@ export default function LayoutHeader() {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize();
+    handleResize(); // check on mount
+    setHasMounted(true);
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return <>{isMobile ? <Mobile /> : <Dektop />}</>;
+  if (!hasMounted) return null; // or return a loading placeholder
+
+  return <>{isMobile ? <Mobile /> : <Desktop />}</>;
 }

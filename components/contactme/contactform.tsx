@@ -33,17 +33,17 @@ export default function ContactForm() {
         >
           Contact Form
         </div>
-        <div className="text-xl w-3/4">
+        <div className="text-md md:text-xl w-3/4">
         "Should you have any questions, please don't hesitate to contact me."
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-10 place-items-center">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 place-items-center">
 
         <form
           action={formAction}
           className="flex flex-col gap-10 place-items-center"
         >
-          <div className="space-y-5 w-100 flex flex-col text-xl">
+          <div className="space-y-5 w-70 md:w-100 flex flex-col text-xl">
             <label htmlFor="topic">Topic</label>
             <Input name="topic" placeholder="please fill your topic or any question." className="h-20" required />
             <label htmlFor="email">Contact Email</label>

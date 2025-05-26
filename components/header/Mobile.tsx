@@ -8,23 +8,41 @@ export default function Mobile() {
   const hdlClick = () => {
     setIsOpen(!isOpen);
   };
+  const hdlClose = () => {
+    setIsOpen(false);
+  };
 
   return (
-    <div className="bg-white absolute rounded-xl left-5 top-5 z-10">
+    <nav className="bg-white  rounded-xl left-5 top-5  fixed z-10 ">
       <div className="p-4">
         <AlignJustify onClick={hdlClick} size={20} />
         {isOpen && (
           <nav>
-            <ul>
-              <li>
-                <Link href="/" aria-label="Home Page">
-                  Phaewphan Wrd.
-                </Link>
+            <ul className="text-cyan-600 font-semibold text-lg flex flex-col gap-2 p-4">
+              <li >
+                <a href="/"  onClick={hdlClose}>
+                  HOME
+                </a>
+              </li>
+              <li >
+                <a href="#aboutme"  onClick={hdlClose}>
+                  ABOUT ME
+                </a>
+              </li>
+              <li >
+                <a href="#projects" onClick={hdlClose}>
+                  PROJECTS
+                </a>
+              </li>
+              <li >
+                <a href="#contactme"  onClick={hdlClose}>
+                  CONTACT ME
+                </a>
               </li>
             </ul>
           </nav>
         )}
       </div>
-    </div>
+    </nav>
   );
 }

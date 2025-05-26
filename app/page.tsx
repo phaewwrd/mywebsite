@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="w-full ">
-      <div className="flex justify-center mb-50 md:w-3/4 mt-20 w-full">
+      <div className="flex justify-center mb-50 xl:w-3/4 mt-20 w-full">
         <HeroSection />
       </div>
       <div id="aboutme"  className=" flex flex-col rounded-lg  sm:w-full ">
@@ -26,7 +26,7 @@ export default function Home() {
       <div className="  flex flex-col rounded-lg sm:w-full ">
         <AboutMePage />
       </div>
-       <div  className="">
+       <div  className="pt-20">
         <ProjectSection />
       </div>
       <div id="contact" className="flex justify-center mb-30">

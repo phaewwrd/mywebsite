@@ -3,9 +3,9 @@
 export default function HeroSection() {
   
   return (
-      <div className="">
+      <div className="m-5 md:m-20 xl:m-0">
       <h1
-        className="mb-8 text-[clamp(2rem,16vmin,20rem)] font-extrabold leading-none tracking-tighter "
+        className="mb-8 text-[clamp(3rem,10vmin,12rem)] xl:text-[clamp(2rem,16vmin,20rem)] font-extrabold leading-none tracking-tighter "
         style={{
           textShadow: "0 0 10px rgba(255, 255, 255, 0.5)",
         }}

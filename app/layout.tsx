@@ -4,7 +4,8 @@ import "./globals.css";
 import LayoutHeader from "@/components/header/LayoutHeader";
 import {Stars} from "@/components/background/Stars";
 import {Leaf} from "@/components/background/Leaf";
-import Header from "@/components/header/Dektop";
+import Header from "@/components/header/Desktop";
+import Footer from "@/components/Footer";
 
 
 
@@ -72,6 +73,7 @@ export default function RootLayout({
         <main className="grid mt-20 justify-items-center tracking-widest text-slate-200">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

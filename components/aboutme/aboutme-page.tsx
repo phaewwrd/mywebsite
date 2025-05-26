@@ -5,8 +5,8 @@ import Profile from "./profile";
 
 export default function AboutMePage() {
   return (
-    <div className="max-w-screen ">     
-      <div  className="p-20 bg-slate-800 rounded-xl text-slate-300">
+    <div className="">     
+      <div  className="p-10 md:p-20 bg-slate-800 rounded-xl text-slate-300">
         <div className="text-[clamp(2rem,4vmin,10rem)] font-extrabold text-center">
           Work Experience
         </div>
@@ -15,7 +15,7 @@ export default function AboutMePage() {
       </div>
 
       <Education />
-      <div id="projects" className="mb-30"></div>
+      <div id="projects" className=""></div>
     </div>
   );
 }

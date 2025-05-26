@@ -43,11 +43,11 @@ export default function ProjectCard({
           },
         },
       }}
-      className="group transition-all duration-500 border-slate-700 border rounded-2xl flex flex-col gap-5 p-10 hover:py-20 hover:border-amber-200 h-70 overflow-hidden hover:h-full place-items-start"
+      className="group transition-all duration-500 border-slate-700 border rounded-2xl flex flex-col gap-5 p-10 hover:py-20 hover:border-amber-200 xl:h-70 overflow-hidden hover:h-full place-items-start"
     >
       <div >
         <div
-          className="text-[clamp(2rem,2vmin,4rem)] tracking-[3px] font-semibold text-slate-200 flex gap-2 place-items-center"
+          className="text-2xl md:text-[clamp(2rem,2vmin,4rem)] tracking-[3px] font-semibold text-slate-200 flex gap-2 place-items-center"
           style={{
             textShadow: "0 0 10px rgba(255, 255, 255, 0.5)",
           }}
@@ -58,7 +58,7 @@ export default function ProjectCard({
         <div className="text-xl text-slate-400">{projects.description}</div>
       </div>
 
-      <div className="mt-4 grid grid-cols-9 gap-4 ">
+      <div className="mt-4 grid grid-cols-6 md:grid-cols-9 gap-4 ">
         {techstack
           .filter((tech: any) => projects.tech_stack?.includes(tech.name))
           .map((tech: any) => (
@@ -92,7 +92,7 @@ export default function ProjectCard({
         {projects.github && (
           <Link
             href={projects.github}
-            className="px-7 py-4 rounded-xl shadow-lg hover:bg-slate-600 hover:text-xl transition-all duration-300"
+            className="px-4 py-4 md:px-10 md:py-5  rounded-lg bg-cyan-700 shadow-lg hover:bg-slate-600 hover:text-xl transition-all duration-300"
           >
             Github
           </Link>
@@ -100,7 +100,7 @@ export default function ProjectCard({
         {projects.front && (
           <Link
             href={projects.front}
-            className="px-10 py-5 rounded-xl shadow-lg hover:bg-slate-600 hover:text-xl hover:font-bold transition-all duration-300"
+            className="px-4 py-4 md:px-10 md:py-5  rounded-lg bg-cyan-700 shadow-lg hover:bg-slate-600 hover:text-xl hover:font-bold transition-all duration-300"
           >
             Front end
           </Link>
@@ -108,14 +108,14 @@ export default function ProjectCard({
         {projects.back && (
           <Link
             href={projects.back}
-            className="px-10 py-5 rounded-xl shadow-lg hover:bg-slate-600 hover:text-xl hover:font-bold transition-all duration-300"
+            className="px-4 py-4 md:px-10 md:py-5  rounded-lg bg-cyan-700 shadow-lg hover:bg-slate-600 hover:text-xl hover:font-bold transition-all duration-300"
           >
             Back end
           </Link>
         )}
       </div>
       {projects.video && (
-        <div className="aspect-video max-w-xl mx-auto w-[2200px]  max-sm:w-[350px] max-md:w-[200px]">
+        <div className="aspect-video max-w-xl mx-auto  max-sm:w-[300px] max-md:w-[350px] w-[1200px]">
           <iframe
             loading="lazy"
             className="w-full h-full"

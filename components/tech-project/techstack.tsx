@@ -20,7 +20,7 @@ export default async function TechStack() {
               <img
                 src={tech.image_Url}
                 alt={tech.name || undefined}
-                className="w-14"
+                className="w-10 md:w-14"
               />
             ) : (
               <div className="text-slate-200 text-xl">{tech.name}</div>
@@ -42,7 +42,7 @@ export default async function TechStack() {
               <img
                 src={tech.image_Url}
                 alt={tech.name || undefined}
-                className="w-14"
+                className="w-10 md:w-14"
               />
             ) : (
               <div className="text-slate-200 text-xl">{tech.name}</div>

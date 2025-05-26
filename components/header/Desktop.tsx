@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
-export default function Dektop() {
+export default function Desktop() {
   const [isMobile, setIsMobile] = useState(false);
-  const [activeAnchor, setActiveAnchor] = useState(""); // เพิ่มตรงนี้
+  const [activeAnchor, setActiveAnchor] = useState(""); 
   const pathname = usePathname();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function Dektop() {
 
   return (
     <nav className="rounded-xl w-3/4 bg-yellow-50 fixed z-10 top-10 shadow-md shadow-cyan-400/50 backdrop-blur-sm">
-      <ul className="p-6 flex gap-10 rounded-md text-amber-400 font-bold">
+      <ul className="p-6 flex gap-10 rounded-md text-amber-400 font-bold md:text-md md:gap-5">
         <li>
           <a
             href="/"

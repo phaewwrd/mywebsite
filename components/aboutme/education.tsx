@@ -1,6 +1,5 @@
 'use client";'
 import { fetchEducation } from "@/libs/data";
-import { GraduationCap } from "lucide-react";
 import EduCard from "@/components/aboutme/edu-card"
 
 export default async function Education() {
@@ -29,7 +28,6 @@ export default async function Education() {
             style={{ textShadow: "0 0 10px rgba(255, 255, 255, 0.5)" }}
           >
             Education and Certificate
-            <GraduationCap className="text-amber-50 w-10 h-10 mb-2" />
           </div>
           <div className="text-xl">"Formal Education & Self-Directed Learning."</div>
         </div>

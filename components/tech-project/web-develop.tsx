@@ -21,10 +21,10 @@ export default async function WebDevelop() {
           development skills."
         </div>
       </div>
-      <div className="grid m-10">
+      <div className="grid md:m-10">
 
       {projects.map((project, index) => (
-        <div className="m-10" key={project.id}>
+        <div className="m-2 " key={project.id}>
           <ProjectCard
             techstack={techstack}
             projects={project}

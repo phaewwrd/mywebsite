@@ -39,7 +39,7 @@ export default function Profile() {
   }, [charIndex, textIndex]);
 
   return (
-    <div className="text-center bg-slate-900 py-20 text-white pt-40">
+    <div className="md:p-5 2xl:p-10 text-center bg-slate-900 py-20 text-white pt-40">
       <div
         className="text-[clamp(2rem,6vmin,10rem)] font-extrabold leading-none"
         style={{
