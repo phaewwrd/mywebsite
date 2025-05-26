@@ -2,7 +2,7 @@ import { AlignJustify } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function NavBar() {
+export default function Mobile() {
   const [isOpen, setIsOpen] = useState(false);
 
   const hdlClick = () => {

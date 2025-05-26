@@ -3,10 +3,8 @@ import { fecthTechStack, fetchProjects } from "@/libs/data";
 import ProjectCard from "./project-card";
 
 export default async function WebDevelop() {
-        const projects = await fetchProjects();
-        const techstack = await fecthTechStack();
-  
-
+  const projects = await fetchProjects();
+  const techstack = await fecthTechStack();
 
   return (
     <div className="tracking-widest bg-gradient-to-b from-slate-800 via-slate-900 to-slate-800 pt-20 flex flex-col gap-10 ">
@@ -18,22 +16,24 @@ export default async function WebDevelop() {
           Web Development
         </div>
         <div className="text-xl w-3/4">
-          "Designed and developed personal web projects to demonstrate problem-solving, user experience design, and end-to-end web development skills."
+          "Designed and developed personal web projects to demonstrate
+          problem-solving, user experience design, and end-to-end web
+          development skills."
         </div>
       </div>
-       <div className="p-10 grid md:grid-cols-2 gap-10 grid-cols-1">
-      {projects.map((project: any, index: number) => (
-        <ProjectCard
-          key={project.id}
-          techstack={techstack}
-          projects={project}
+      <div className="grid m-10">
 
-        />
+      {projects.map((project, index) => (
+        <div className="m-10" key={project.id}>
+          <ProjectCard
+            techstack={techstack}
+            projects={project}
+            delay={index * 0.1}
+          />
+        </div>
       ))}
-    </div>
-  
       </div>
-    
-     
+      ƒ
+    </div>
   );
 }

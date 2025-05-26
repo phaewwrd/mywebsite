@@ -15,6 +15,7 @@ export default function AboutMePage() {
       </div>
 
       <Education />
+      <div id="projects" className="mb-30"></div>
     </div>
   );
 }

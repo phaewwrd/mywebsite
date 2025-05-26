@@ -4,6 +4,7 @@ import "./globals.css";
 import LayoutHeader from "@/components/header/LayoutHeader";
 import {Stars} from "@/components/background/Stars";
 import {Leaf} from "@/components/background/Leaf";
+import Header from "@/components/header/Dektop";
 
 
 
@@ -35,12 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="relative min-h-screen overflow-x-hidden bg-slate-800 ">
-       <div className="grid mt-10 justify-items-center z-10">
+       <div className="grid mt-10 place-items-center z-10">
         <LayoutHeader />
        </div>
         <Stars />
                     <Leaf />
-
+    
         {/* พื้นหลัง Mobile */}
         <div className="
           block sm:hidden 

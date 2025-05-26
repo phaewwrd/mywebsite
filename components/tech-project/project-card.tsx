@@ -39,13 +39,13 @@ export default function ProjectCard({
             type: "tween",
             ease: "easeOut",
             duration: 0.4,
-            delay: delay, 
+            delay: delay,
           },
         },
       }}
-      className="group transition-all duration-500 border-slate-700 border rounded-2xl flex flex-col gap-5 p-10 hover:py-20 hover:border-amber-200"
+      className="group transition-all duration-500 border-slate-700 border rounded-2xl flex flex-col gap-5 p-10 hover:py-20 hover:border-amber-200 h-70 overflow-hidden hover:h-full place-items-start"
     >
-      <div>
+      <div >
         <div
           className="text-[clamp(2rem,2vmin,4rem)] tracking-[3px] font-semibold text-slate-200 flex gap-2 place-items-center"
           style={{
@@ -64,7 +64,7 @@ export default function ProjectCard({
           .map((tech: any) => (
             <div
               key={tech.id}
-              className="group hover:shadow-xl transitionflex flex-col place-items-center text-center"
+              className="group hover:shadow-xl transition flex flex-col place-items-center text-center"
             >
               <img
                 src={tech.image_Url}
@@ -80,7 +80,7 @@ export default function ProjectCard({
       {projects.features?.split("/").map((el, index) => {
         const [title, desc] = el.split("|").map((str) => str.trim());
         return (
-          <div key={index} className="pt-2 text-xl">
+          <div key={index} className="pt-2 text-xl ">
             • {title?.charAt(0).toUpperCase() + title.slice(1)}
             <div className="text-base pl-4">
               - {desc?.charAt(0).toLowerCase() + desc?.slice(1)}
@@ -90,16 +90,40 @@ export default function ProjectCard({
       })}
       <div className="flex gap-5">
         {projects.github && (
-        <Link href={projects.github} className="px-10 py-5 rounded-xl shadow-lg hover:bg-slate-600 hover:text-xl hover:font-bold transition-all duration-300">Github</Link>
+          <Link
+            href={projects.github}
+            className="px-7 py-4 rounded-xl shadow-lg hover:bg-slate-600 hover:text-xl transition-all duration-300"
+          >
+            Github
+          </Link>
         )}
         {projects.front && (
-        <Link href={projects.front} className="px-10 py-5 rounded-xl shadow-lg hover:bg-slate-600 hover:text-xl hover:font-bold transition-all duration-300">Front end</Link>
+          <Link
+            href={projects.front}
+            className="px-10 py-5 rounded-xl shadow-lg hover:bg-slate-600 hover:text-xl hover:font-bold transition-all duration-300"
+          >
+            Front end
+          </Link>
         )}
         {projects.back && (
-        <Link href={projects.back} className="px-10 py-5 rounded-xl shadow-lg hover:bg-slate-600 hover:text-xl hover:font-bold transition-all duration-300">Back end</Link>
+          <Link
+            href={projects.back}
+            className="px-10 py-5 rounded-xl shadow-lg hover:bg-slate-600 hover:text-xl hover:font-bold transition-all duration-300"
+          >
+            Back end
+          </Link>
         )}
-        
       </div>
+      {projects.video && (
+        <div className="aspect-video max-w-xl mx-auto w-[2200px]  max-sm:w-[350px] max-md:w-[200px]">
+          <iframe
+            loading="lazy"
+            className="w-full h-full"
+            src={projects.video}
+            allow="fullscreen"
+          ></iframe>
+        </div>
+      )}
     </motion.div>
   );
 }

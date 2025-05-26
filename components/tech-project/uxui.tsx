@@ -1,4 +1,5 @@
-import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function UxUi() {
   return (
@@ -12,6 +13,7 @@ export default function UxUi() {
       <div className="text-xl">
         "Formal Education & Self-Directed Learning."
       </div>
+      <Link href='/uxui'> Click</Link> 
     </div>
   );
 }

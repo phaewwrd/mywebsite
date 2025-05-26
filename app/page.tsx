@@ -5,6 +5,7 @@ import HeroSection from "@/components/hero";
 import ProjectSection from "@/components/tech-project/project-section";
 import TechStack from "@/components/tech-project/techstack";
 import { Metadata } from "next";
+import UxUi from "./uxui/page";
 
 export const metadata: Metadata = {
   title: "Phaewphan Wrd.",
@@ -24,13 +25,13 @@ export default function Home() {
       </div>
       <div className="  flex flex-col rounded-lg sm:w-full ">
         <AboutMePage />
+      </div>
+       <div  className="">
         <ProjectSection />
       </div>
-      <div id="projects" className="">
-      </div>
-      <div id="blog">
+      {/* <div id="blog">
         <BlogSection />
-      </div>
+      </div>  */}
     </div>
   );
 }

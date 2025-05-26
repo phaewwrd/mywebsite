@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { div } from "framer-motion/client";
 import { usePathname } from "next/navigation";
-import NavBar from "./NavBar";
+import Dektop from "./Dektop";
+import Mobile from "./Mobile";
 
 export default function LayoutHeader() {
   const [isMobile, setIsMobile] = useState(false);
@@ -20,14 +21,5 @@ export default function LayoutHeader() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return (
-    <div>
-      
-      {/* {isMobile ? 
-<NavBar/>
-      : <LayoutHeader/> } */}
-
-    </div>
-   
-  );
+  return <>{isMobile ? <Mobile /> : <Dektop />}</>;
 }

@@ -1,14 +1,12 @@
 import { div } from "framer-motion/client";
 import React from "react";
 import WebDevelop from "./web-develop";
-import UxUi from "./uxui";
 
 
 export default async function ProjectSection() {
   return (
    <div className="grid grid-cols-1 gap-4  text-slate-300 relative overflow-hidden ">
     <WebDevelop/>
-    <UxUi/>
    </div>
   );
 }
