@@ -70,7 +70,7 @@ export default function Dektop() {
         /
         <li>
           <a
-            href="#blog"
+            href="#contact"
             onClick={() => handleAnchorClick("blog")}
             className={`group relative px-2 py-1 font-bold ${
               activeAnchor === "blog"

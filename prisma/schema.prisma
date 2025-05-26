@@ -49,3 +49,10 @@ model Projects {
   front       String?
   back        String?
 }
+
+model contact {
+  id    Int     @id @default(autoincrement())
+  email String?
+  topic String?
+  phone String?
+}

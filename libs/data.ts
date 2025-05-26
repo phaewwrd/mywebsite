@@ -1,3 +1,6 @@
+'use server';
+
+import { redirect } from 'next/navigation';
 import prisma from "@/libs/prisma";
 
 export async function fecthBlog() {
@@ -63,5 +66,25 @@ export async function fetchProjects() {
   } catch (error) {
     console.error("Failed to fetch projects:", error);
     return [];
+  }
+}
+
+
+
+
+export async function onSubmit(prevState: any, formData: FormData) {
+  try {
+    await prisma.contact.create({
+      data: {
+        topic: formData.get("topic") as string,
+        email: formData.get("email") as string,
+        phone: formData.get("phone") as string,
+      },
+    });
+
+    return { success: true };
+  } catch (error) {
+    console.error("Failed to submit:", error);
+    return { success: false, error: "Submission failed." };
   }
 }

@@ -162,6 +162,13 @@ exports.Prisma.ProjectsScalarFieldEnum = {
   back: 'back'
 };
 
+exports.Prisma.ContactScalarFieldEnum = {
+  id: 'id',
+  email: 'email',
+  topic: 'topic',
+  phone: 'phone'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -183,7 +190,8 @@ exports.Prisma.ModelName = {
   Education: 'Education',
   WorkExp: 'WorkExp',
   Tech_stack: 'Tech_stack',
-  Projects: 'Projects'
+  Projects: 'Projects',
+  contact: 'contact'
 };
 
 /**

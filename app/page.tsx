@@ -1,11 +1,11 @@
 import AboutMePage from "@/components/aboutme/aboutme-page";
 import Profile from "@/components/aboutme/profile";
-import BlogSection from "@/components/blog/blog-section";
 import HeroSection from "@/components/hero";
 import ProjectSection from "@/components/tech-project/project-section";
 import TechStack from "@/components/tech-project/techstack";
 import { Metadata } from "next";
 import UxUi from "./uxui/page";
+import ContactForm from "@/components/contactme/contactform";
 
 export const metadata: Metadata = {
   title: "Phaewphan Wrd.",
@@ -29,9 +29,9 @@ export default function Home() {
        <div  className="">
         <ProjectSection />
       </div>
-      {/* <div id="blog">
-        <BlogSection />
-      </div>  */}
+      <div id="contact" className="flex justify-center mb-30">
+        <ContactForm/>
+      </div> 
     </div>
   );
 }
