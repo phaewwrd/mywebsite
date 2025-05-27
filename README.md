@@ -4,5 +4,5 @@
 ## Tech Stack
 - Frontend: Next.js, Javascript, Typescript, Tailwind CSS, Shadcn UI, React Toastify
 - Backend: Next.js (API Routes / App Router for backend logic)
-- Database: PostgreSQL (via Neon), Prisma ORM
+- Database: PostgreSQL (via Neon), Prisma ORM.
 
