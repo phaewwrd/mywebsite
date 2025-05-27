@@ -1,7 +1,7 @@
 'use client'
 import { motion } from "framer-motion";
 
-export function Stars() {
+export default function Stars() {
     
 
   const stars = Array.from({ length: 300 }, (_, i) => ({

@@ -2,8 +2,8 @@
 
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import {Leaf} from '@/components/background/Leaf'
-import {Stars} from '@/components/background/Stars'
+import Leaf from '@/components/background/Leaf'
+import Stars from '@/components/background/Stars'
 import Fog from './Fog'
 
 export default function BackGroundImg() {

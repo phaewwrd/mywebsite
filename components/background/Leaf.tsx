@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { motion } from 'framer-motion'
 
-export function Leaf({}) {
+export default function Leaf({}) {
 
   return (
     <div>
