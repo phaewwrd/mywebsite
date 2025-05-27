@@ -39,7 +39,7 @@ export default async function WebDevelop() {
         </div>
       </div>
       <div className="grid md:m-10">
-        {projects.map((project, index) => {
+        {projects.map((project) => {
           const techStackArray =
             project.tech_stack?.split(",").map((t) => t.trim()) ?? undefined;
 
