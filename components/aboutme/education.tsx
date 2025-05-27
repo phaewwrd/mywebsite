@@ -2,6 +2,8 @@
 import { fetchEducation } from "@/libs/data";
 import EduCard from "@/components/aboutme/edu-card"
 
+
+
 export default async function Education() {
   const eduData = await fetchEducation();
   const shootingStarStyle = {
@@ -13,7 +15,6 @@ export default async function Education() {
       { top: "70%", animationDelay: "7s" },
     ],
   };
-  // console.log(eduData);
 
   return (
     <div className="bg-gradient-to-b from-slate-800 via-slate-900 to-slate-800 py-20 px-10 relative overflow-hidden">

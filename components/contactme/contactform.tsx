@@ -4,7 +4,7 @@ import { useFormStatus } from "react-dom";
 import { useFormState } from "react-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { onSubmit } from "@/libs/data"; // 👈 server action
+import { onSubmit } from "@/libs/data";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
 import Phone3D from "./phone3d";
@@ -34,7 +34,7 @@ export default function ContactForm() {
           Contact Form
         </div>
         <div className="text-md md:text-xl w-3/4">
-        "Should you have any questions, please don't hesitate to contact me."
+        Should you have any questions, please don't hesitate to contact me.
         </div>
       </div>
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 place-items-center">

@@ -15,7 +15,7 @@ export default function LayoutHeader() {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // check on mount
+    handleResize(); 
     setHasMounted(true);
 
     window.addEventListener("resize", handleResize);

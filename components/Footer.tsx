@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, Linkedin, Mail, Phone, PhoneCall } from "lucide-react";
+import { Github, Linkedin, Mail, PhoneCall } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -14,7 +14,7 @@ export default function Footer() {
             href="www.linkedin.com/in/phaewphan-woradanuphan"
             className="flex gap-2"
           >
-            {" "}
+            
             <Linkedin /> Linkedin
           </a>
           <a href="tel:+66621456941" className="flex gap-2">

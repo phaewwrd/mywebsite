@@ -4,7 +4,6 @@ import HeroSection from "@/components/hero";
 import ProjectSection from "@/components/tech-project/project-section";
 import TechStack from "@/components/tech-project/techstack";
 import { Metadata } from "next";
-import UxUi from "./uxui/page";
 import ContactForm from "@/components/contactme/contactform";
 
 export const metadata: Metadata = {

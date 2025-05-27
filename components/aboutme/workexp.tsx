@@ -1,13 +1,5 @@
 import { fetchExperience } from "@/libs/data";
 
-// type WorkExp = {
-//     id: number;
-//     org_name: string;
-//     job_title: string;
-//     years: string;
-//     description: string;
-//     company: string;
-// }
 
 export default async function WorkExp() {
   const expdata = await fetchExperience();

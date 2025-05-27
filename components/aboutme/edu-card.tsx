@@ -4,7 +4,18 @@ import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import "@/app/globals.css";
 
-export default function EduCard({ edu, delay }: { edu: any; delay: number }) {
+interface EduCardProps {
+  edu: {
+    id: number;
+    org_name: string | null;
+    years: string | null;
+    subject: string | null;
+    description: string | null;
+  };
+  delay?: number;
+}
+
+export default function EduCard({ edu, delay }: EduCardProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-10% 0px -10% 0px", });
   const controls = useAnimation();

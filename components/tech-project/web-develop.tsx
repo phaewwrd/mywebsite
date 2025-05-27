@@ -6,6 +6,10 @@ export default async function WebDevelop() {
   const projects = await fetchProjects();
   const techstack = await fecthTechStack();
 
+  if (!projects || !techstack) {
+    return <div className="text-center text-red-500">Failed to load data</div>;
+  }
+
   return (
     <div className="tracking-widest bg-gradient-to-b from-slate-800 via-slate-900 to-slate-800 pt-20 flex flex-col gap-10 ">
       <div className="flex flex-col justify-center place-items-center text-center">
@@ -16,22 +20,34 @@ export default async function WebDevelop() {
           Web Development
         </div>
         <div className="text-xl w-3/4">
-          "Designed and developed personal web projects to demonstrate
+          Designed and developed personal web projects to demonstrate
           problem-solving, user experience design, and end-to-end web
-          development skills."
+          development skills.
         </div>
       </div>
       <div className="grid md:m-10">
+        {projects.map((project, index) => {
+          const techStackArray =
+            project.tech_stack?.split(",").map((t) => t.trim()) ?? undefined;
 
-      {projects.map((project, index) => (
-        <div className="m-2 " key={project.id}>
-          <ProjectCard
-            techstack={techstack}
-            projects={project}
-            delay={index * 0.1}
-          />
-        </div>
-      ))}
+          return (
+            <div className="m-2" key={project.id}>
+              <ProjectCard
+                techstack={techstack}
+                projects={{
+                  ...project,
+                  tech_stack: techStackArray,
+                  features: project.features ?? undefined,
+                  github: project.github ?? undefined,
+                  front: project.front ?? undefined,
+                  back: project.back ?? undefined,
+                  video: project.video ?? undefined,
+                }}
+                
+              />
+            </div>
+          );
+        })}
       </div>
       ƒ
     </div>

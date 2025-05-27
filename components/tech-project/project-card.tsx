@@ -2,16 +2,27 @@
 import { useAnimation, useInView, motion } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
-import { span } from "framer-motion/client";
 
 export default function ProjectCard({
   techstack,
   projects,
-  delay = 0,
 }: {
-  techstack: any;
-  projects: any;
-  delay?: number;
+  techstack: {
+    id: number;
+    name: string | null;
+    image_Url: string | null;
+  }[];
+   projects: {
+    id: number;
+    name: string | null;
+    description: string | null;
+    tech_stack?: (string | null)[]; // If needed
+    features?: string;
+    github?: string;
+    front?: string;
+    back?: string;
+    video?: string;
+  };
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
@@ -39,39 +50,36 @@ export default function ProjectCard({
             type: "tween",
             ease: "easeOut",
             duration: 0.4,
-            delay: delay,
+            delay: 0,
           },
         },
       }}
       className="group transition-all duration-500 border-slate-700 border rounded-2xl flex flex-col gap-5 p-10 hover:py-20 hover:border-amber-200 xl:h-70 overflow-hidden hover:h-full place-items-start"
     >
-      <div >
+      <div>
         <div
           className="text-2xl md:text-[clamp(2rem,2vmin,4rem)] tracking-[3px] font-semibold text-slate-200 flex gap-2 place-items-center"
           style={{
             textShadow: "0 0 10px rgba(255, 255, 255, 0.5)",
           }}
         >
-          {projects.name}
+          {projects.name ?? ''}
           <Link href="/projects" />
         </div>
-        <div className="text-xl text-slate-400">{projects.description}</div>
+        <div className="text-xl text-slate-400">{projects.description ?? ''}</div>
       </div>
 
       <div className="mt-4 grid grid-cols-6 md:grid-cols-9 gap-4 ">
         {techstack
-          .filter((tech: any) => projects.tech_stack?.includes(tech.name))
-          .map((tech: any) => (
-            <div
-              key={tech.id}
-              className="group hover:shadow-xl transition flex flex-col place-items-center text-center"
-            >
-              <img
-                src={tech.image_Url}
-                alt={tech.name}
-                className="w-10 px-1 "
-              />
-              <p className="text-slate-200 text-xs  pt-2 opacity-0 group-hover:opacity-100 transition">
+          .filter(
+            (tech): tech is { id: number; name: string; image_Url: string } =>
+              tech.name !== null && tech.image_Url !== null
+          )
+          .filter((tech) => projects.tech_stack?.includes(tech.name))
+          .map((tech) => (
+            <div key={tech.id} className="...">
+              <img src={tech.image_Url} alt={tech.name} className="w-10 px-1" />
+              <p className="text-slate-200 text-xs pt-2 opacity-0 group-hover:opacity-100 transition">
                 {tech.name}
               </p>
             </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import WorkExp from "./workexp";
 import Education from "./education";
-import Profile from "./profile";
 
 export default function AboutMePage() {
   return (

@@ -4,20 +4,11 @@ import "./globals.css";
 import LayoutHeader from "@/components/header/LayoutHeader";
 import Stars from "@/components/background/Stars";
 import Leaf from "@/components/background/Leaf";
-import Header from "@/components/header/Desktop";
 import Footer from "@/components/Footer";
 
 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title:{
@@ -43,7 +34,6 @@ export default function RootLayout({
         <Stars />
                     <Leaf />
     
-        {/* พื้นหลัง Mobile */}
         <div className="
           block sm:hidden 
           fixed inset-0 
@@ -57,7 +47,6 @@ export default function RootLayout({
 
           </div>
 
-        {/* พื้นหลัง Desktop */}
         <div className="
           hidden sm:block 
           fixed inset-0 
@@ -69,7 +58,6 @@ export default function RootLayout({
         "></div>
 
 
-        {/* เนื้อหาเว็บไซต์ */}
         <main className="grid mt-20 justify-items-center tracking-widest text-slate-200">
           {children}
         </main>

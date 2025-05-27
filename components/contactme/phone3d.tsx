@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 
 export default function Phone3D() {
   return (
@@ -7,9 +6,7 @@ export default function Phone3D() {
        <div className='animate-marquee-phone transition-all'>
         <Image src="/phone.png" alt="3D Phone" width={300} height={500} className="w-60 xl:w-80" />
        </div>
-        {/* <div className='relative'> */}
         <Image src="/phone-bg.png" alt="3D Phone" width={250} height={500} className=" absolute xl:w-80 w-60 bottom-80 md:right-60 xl:right-60 2xl:right-130 -z-10" />
-        {/* </div> */}
         
     </div>
   )
