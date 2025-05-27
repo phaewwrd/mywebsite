@@ -2,6 +2,7 @@
 
 import { redirect } from 'next/navigation';
 import prisma from "@/libs/prisma";
+import { Education } from '@/components/aboutme/education';
 
 export async function fecthBlog() {
   try {
@@ -15,7 +16,7 @@ export async function fecthBlog() {
   }
 }
 
-export async function fetchEducation() {
+export async function fetchEducation(): Promise<Education[]> {
   try {
     const education = await prisma.education.findMany({
       orderBy: { years: "desc" },

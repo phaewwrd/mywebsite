@@ -2,10 +2,16 @@
 import { fetchEducation } from "@/libs/data";
 import EduCard from "@/components/aboutme/edu-card"
 
-
+export interface Education {
+  id: number;
+  org_name: string | null;
+  years: string | null;
+  subject: string | null;
+  description: string | null;
+}
 
 export default async function Education() {
-  const eduData = await fetchEducation();
+  const eduData: Education[] = await fetchEducation();
   const shootingStarStyle = {
     className: "shooting-star",
     style: [
