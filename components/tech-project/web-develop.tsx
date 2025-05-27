@@ -2,17 +2,18 @@ import { fecthTechStack, fetchProjects } from "@/libs/data";
 
 import ProjectCard from "./project-card";
 
-export interface ProjectType {
+type ProjectType = {
   id: number;
-  name: string;
-  description: string;
-  tech_stack?: string
-  features?: string
-  github?: string;
-  front?: string;
-  back?: string;
-  video?: string;
-}
+  name: string | null;
+  tech_stack: string | null;
+  description: string | null;
+  github: string | null;
+  img: string | null;
+  features: string | null;
+  video: string | null;
+  front: string | null;
+  back: string | null;
+};
 
 export default async function WebDevelop() {
   const projects: ProjectType[] = await fetchProjects();
