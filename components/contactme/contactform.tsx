@@ -1,16 +1,15 @@
 "use client";
 
 import { useFormStatus } from "react-dom";
-import { useFormState } from "react-dom";
+import { useActionState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { onSubmit } from "@/libs/data";
 import Swal from "sweetalert2";
-import { useEffect } from "react";
 import Phone3D from "./phone3d";
 
 export default function ContactForm() {
-  const [state, formAction] = useFormState(onSubmit, { success: false });
+  const [state, formAction] = useActionState(onSubmit, { success: false });
 
   useEffect(() => {
     if (state.success) {
