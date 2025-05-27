@@ -1,14 +1,12 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import Desktop from "./Desktop";
 import Mobile from "./Mobile";
 
 export default function LayoutHeader() {
   const [isMobile, setIsMobile] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     const handleResize = () => {

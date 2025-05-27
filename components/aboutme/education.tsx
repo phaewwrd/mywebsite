@@ -30,7 +30,7 @@ export default async function Education() {
           >
             Education and Certificate
           </div>
-          <div className="text-xl">"Formal Education & Self-Directed Learning."</div>
+          <div className="text-xl">Formal Education & Self-Directed Learning.</div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 text-slate-300 relative overflow-hidden">

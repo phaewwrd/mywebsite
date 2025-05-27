@@ -54,7 +54,7 @@ export default function Profile() {
           <div className="text-slate-500">Full Stack Designer & Developer</div>
         </div>
         <div className="text-xl mx-auto mt-2 max-w-3xl px-5">
-          "I am a passionate full-stack designer and developer with a love for creating beautiful and functional web applications. I thrive on challenges and enjoy learning new technologies to enhance my skills."
+          I am a passionate full-stack designer and developer with a love for creating beautiful and functional web applications. I thrive on challenges and enjoy learning new technologies to enhance my skills.
         </div>
       </div>
     </div>

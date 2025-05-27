@@ -1,4 +1,5 @@
 import { AlignJustify } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Mobile() {
@@ -19,9 +20,9 @@ export default function Mobile() {
           <nav>
             <ul className="text-cyan-600 font-semibold text-lg flex flex-col gap-2 p-4">
               <li >
-                <a href="/"  onClick={hdlClose}>
+                <Link href="/"  onClick={hdlClose}>
                   HOME
-                </a>
+                </Link>
               </li>
               <li >
                 <a href="#aboutme"  onClick={hdlClose}>

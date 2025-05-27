@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Desktop() {
   const [isMobile, setIsMobile] = useState(false);
@@ -25,7 +26,7 @@ export default function Desktop() {
     <nav className="rounded-xl w-3/4 bg-yellow-50 fixed z-10 top-10 shadow-md shadow-cyan-400/50 backdrop-blur-sm">
       <ul className="p-6 flex gap-10 rounded-md text-amber-400 font-bold md:text-md md:gap-5">
         <li>
-          <a
+          <Link
             href="/"
             className={`group relative px-2 py-1 font-bold ${
               pathname === "/"
@@ -35,7 +36,7 @@ export default function Desktop() {
           >
             HOME
             <span className="absolute left-0 -bottom-1.5 h-[2px] bg-yellow-400 transition-all duration-300 w-0 group-hover:w-full" />
-          </a>
+          </Link>
         </li>
         /
         <li>

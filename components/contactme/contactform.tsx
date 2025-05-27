@@ -33,7 +33,7 @@ export default function ContactForm() {
           Contact Form
         </div>
         <div className="text-md md:text-xl w-3/4">
-        Should you have any questions, please don't hesitate to contact me.
+        Should you have any questions, please don`&apos;`t hesitate to contact me.
         </div>
       </div>
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 place-items-center">
