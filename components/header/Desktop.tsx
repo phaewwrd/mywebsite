@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function Desktop() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile,setIsMobile] = useState(false);
   const [activeAnchor, setActiveAnchor] = useState(""); 
   const pathname = usePathname();
 
@@ -23,7 +23,9 @@ export default function Desktop() {
   };
 
   return (
-    <nav className="rounded-xl w-3/4 bg-yellow-50 fixed z-10 top-10 shadow-md shadow-cyan-400/50 backdrop-blur-sm">
+    <>
+    {isMobile && (
+       <nav className="rounded-xl w-3/4 bg-yellow-50 fixed z-10 top-10 shadow-md shadow-cyan-400/50 backdrop-blur-sm">
       <ul className="p-6 flex gap-10 rounded-md text-amber-400 font-bold md:text-md md:gap-5">
         <li>
           <Link
@@ -85,5 +87,9 @@ export default function Desktop() {
         </li>
       </ul>
     </nav>
+    )}
+    </>
+    
+   
   );
 }
