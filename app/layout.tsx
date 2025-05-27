@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LayoutHeader from "@/components/header/LayoutHeader";
-import {Stars} from "@/components/background/Stars";
-import {Leaf} from "@/components/background/Leaf";
+import Stars from "@/components/background/Stars";
+import Leaf from "@/components/background/Leaf";
 import Header from "@/components/header/Desktop";
 import Footer from "@/components/Footer";
 
