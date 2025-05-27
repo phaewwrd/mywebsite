@@ -16,9 +16,6 @@ export default async function AboutMe() {
 
         <WorkExp />
       </div>
-
-      {/* education */}
-
       <Education />
     </div>
   );

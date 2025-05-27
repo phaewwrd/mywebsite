@@ -77,7 +77,7 @@ export default function ProjectCard({
             </div>
           ))}
       </div>
-      {projects.features?.split("/").map((el, index) => {
+      {projects.features?.split("/").map((el: string, index: number) => {
         const [title, desc] = el.split("|").map((str) => str.trim());
         return (
           <div key={index} className="pt-2 text-xl ">
