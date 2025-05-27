@@ -20,7 +20,7 @@ export default function LayoutHeader() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if (!hasMounted) return null; // or return a loading placeholder
+  if (!hasMounted) return 
 
   return <>{isMobile ? <Mobile /> : <Desktop />}</>;
 }
