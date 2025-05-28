@@ -13,8 +13,8 @@ export default function Profile() {
   const typingSpeed = 100;
   const pauseDuration = 3000;
 
-  const [textIndex, setTextIndex] = useState(0); // ข้อความที่แสดงอยู่
-  const [charIndex, setCharIndex] = useState(0); // จำนวนตัวอักษรที่แสดง
+  const [textIndex, setTextIndex] = useState(0); 
+  const [charIndex, setCharIndex] = useState(0); 
   const [displayedText, setDisplayedText] = useState('');
 
   useEffect(() => {
@@ -27,10 +27,9 @@ export default function Profile() {
         setCharIndex((prev) => prev + 1);
       }, typingSpeed);
     } else {
-      // พิมพ์ครบ → รอ pauseDuration → ไปข้อความถัดไป
       timeout = setTimeout(() => {
         setCharIndex(0);
-        setTextIndex((prev) => (prev + 1) % messages.length); // วนกลับไปข้อความแรก
+        setTextIndex((prev) => (prev + 1) % messages.length); 
       }, pauseDuration);
     }
 
@@ -38,7 +37,7 @@ export default function Profile() {
   }, [charIndex, textIndex]);
 
   return (
-    <div className="md:p-5 2xl:p-10 text-center bg-slate-900 py-20 text-white pt-40">
+    <div className="md:p-5 xl:pt-40 2xl:p-10 text-center bg-slate-900 py-20 text-white pt-30">
       <div
         className="text-[clamp(2rem,6vmin,10rem)] font-extrabold leading-none"
         style={{

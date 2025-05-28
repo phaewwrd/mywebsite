@@ -16,19 +16,22 @@ export default function Home() {
       <div className="flex justify-center mb-50 xl:w-3/4 mt-20 w-full">
         <HeroSection />
       </div>
-      <div id="aboutme"  className=" flex flex-col rounded-lg  sm:w-full ">
+      <div className=" flex flex-col rounded-lg  sm:w-full pt-20">
+        <div  id="aboutme"></div>
         <Profile />
       </div>
-      <div className="  flex flex-col rounded-lg sm:w-full">
+      <div className="flex flex-col rounded-lg sm:w-full">
         <TechStack />
       </div>
-      <div className="  flex flex-col rounded-lg sm:w-full ">
+      <div className="flex flex-col rounded-lg sm:w-full ">
         <AboutMePage />
       </div>
        <div  className="pt-20">
         <ProjectSection />
+        <div id="contactme">
+        </div>
       </div>
-      <div id="contactme" className="flex justify-center mb-30">
+      <div className="flex justify-center mb-30">
         <ContactForm/>
       </div> 
     </div>

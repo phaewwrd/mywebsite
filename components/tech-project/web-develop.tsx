@@ -62,7 +62,7 @@ export default async function WebDevelop() {
           );
         })}
       </div>
-      ƒ
+      
     </div>
   );
 }
