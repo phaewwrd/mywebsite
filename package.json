@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
-"lint": "echo 'Lint disabled'"
+"lint": "echo 'Lint disabled'",
+    "build": "prisma generate && next build"
+
+
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
