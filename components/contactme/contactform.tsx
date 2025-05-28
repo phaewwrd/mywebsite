@@ -13,14 +13,13 @@ export default function ContactForm() {
 
   useEffect(() => {
     if (state.success) {
-      // Swal.fire({
-      //   position: "top-end",
-      //   icon: "success",
-      //   title: "Your message has been sent!",
-      //   showConfirmButton: false,
-      //   timer: 1500,
-      // });
-      alert('Your message has been sent!')
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Your message has been sent!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
   }, [state.success]);
 
