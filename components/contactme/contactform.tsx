@@ -14,7 +14,6 @@ export default function ContactForm() {
   useEffect(() => {
     if (state.success) {
       Swal.fire({
-        position: "center",
         icon: "success",
         title: "Your message has been sent!",
         showConfirmButton: false,
