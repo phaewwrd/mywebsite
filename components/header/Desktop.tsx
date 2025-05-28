@@ -63,7 +63,7 @@ export default function Desktop() {
         /
         <li>
           <a
-            href="#contact"
+            href="#contactme"
             onClick={() => handleAnchorClick("blog")}
             className={`group relative px-2 py-1 font-bold ${
               activeAnchor === "blog"

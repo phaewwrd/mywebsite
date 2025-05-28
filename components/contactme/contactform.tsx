@@ -24,7 +24,7 @@ export default function ContactForm() {
   }, [state.success]);
 
   return (
-    <div className="grid grid-cols-1 gap-10 place-items-center">
+    <div className="grid grid-cols-1 gap-10 place-items-center mt-20  xl:mt-50 2xl:mt-50">
       <div className="flex flex-col justify-center place-items-center text-center">
         <div
           className="text-[clamp(2rem,6vmin,10rem)] font-bold text-slate-300 flex gap-2 tracking-wider"
@@ -33,7 +33,7 @@ export default function ContactForm() {
           Contact Form
         </div>
         <div className="text-md md:text-xl w-3/4">
-        Should you have any questions, please don`&apos;`t hesitate to contact me.
+        Should you have any questions, please don&apos;t hesitate to contact me.
         </div>
       </div>
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 place-items-center">

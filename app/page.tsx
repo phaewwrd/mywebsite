@@ -28,7 +28,7 @@ export default function Home() {
        <div  className="pt-20">
         <ProjectSection />
       </div>
-      <div id="contact" className="flex justify-center mb-30">
+      <div id="contactme" className="flex justify-center mb-30">
         <ContactForm/>
       </div> 
     </div>

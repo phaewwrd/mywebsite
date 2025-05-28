@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Phone3D() {
   return (
-    <div className='flex justify-center '>
+    <div className='flex justify-center'>
        <div className='animate-marquee-phone transition-all'>
         <Image src='/phone2.png' alt="phone2" width={300} height={500} className="w-60 xl:w-80" />
        </div>
