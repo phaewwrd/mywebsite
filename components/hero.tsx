@@ -17,6 +17,10 @@ export default function HeroSection() {
       <p className=" text-amber-200 font-bold uppercase tracking-[.2em] animate-pulse  text-[clamp(1rem,4vmin,5rem)] ">
       Full Stack Designer & Developer
       </p>
+      <div className="hover:border-b-2 border-cyan-200 transition-all duration-300 w-30">
+      <a href="/Phaewphan_Wrd.pdf" download
+      className="">Download CV</a>
+      </div>
       </div>
     
   );
