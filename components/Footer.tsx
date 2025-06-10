@@ -11,7 +11,7 @@ export default function Footer() {
             <Github /> Github
           </a>
           <a
-            href="www.linkedin.com/in/phaewphan-woradanuphan"
+            href="https://linkedin.com/in/phaewphan-woradanuphan"
             className="flex gap-2"
           >
             
