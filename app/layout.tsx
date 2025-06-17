@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="relative min-h-screen overflow-x-hidden bg-slate-800 ">
        <div className="grid mt-10 place-items-center z-10">
-        {/* <LayoutHeader /> */}
+        <LayoutHeader />
        </div>
         <Stars />
                     <Leaf />
